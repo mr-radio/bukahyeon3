@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-10-23",
+  "mode": "수동 확인 목록",
+  "items": [
+    {
+      "id": "d001",
+      "kind": "notice",
+      "date": "2026-03-09",
+      "title": "2026년도 임시총회 개최공고",
+      "source": "서울시 정비사업 정보몽땅 · 조합 등록",
+      "summary": "2026년 3월 9일 공개자료 목록에 등록된 조합총회 공고입니다. 현재 진행 중인 총회 일정이 아닙니다.",
+      "url": "https://cleanup.seoul.go.kr/service/opendata/othbcDocInput/RecentlscrOpen.do?cafeId=410100008007F14",
+      "notice": "목록에서 제목 확인"
+    },
+    {
+      "id": "d002",
+      "kind": "notice",
+      "date": "2024-03-06",
+      "title": "사업시행계획변경인가 공람(열람)공고",
+      "source": "서대문구청 · 공고 제2024-399호",
+      "summary": "변경인가 신청에 따른 공람 기간과 의견 제출 절차를 안내한 공고입니다. 변경인가가 승인됐다는 의미는 아닙니다.",
+      "url": "https://www.sdm.go.kr/news/notice/notice.do?mode=view&sdmBoardSeq=290254"
+    },
+    {
+      "id": "d003",
+      "kind": "notice",
+      "date": "2023-12-14",
+      "title": "북아현3구역 재정비촉진계획 경미한 변경 고시",
+      "source": "서울특별시 · 제2023-544호",
+      "summary": "재정비촉진계획 변경결정과 지형도면 관련 내용을 확인할 수 있는 서울시 고시입니다.",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=577950"
+    },
+    {
+      "id": "d004",
+      "kind": "notice",
+      "date": "2022-04-21",
+      "title": "북아현3구역 재정비촉진계획 변경 결정 고시",
+      "source": "서울특별시 · 제2022-186호",
+      "summary": "북아현3구역의 변경된 재정비촉진계획과 지형도면을 공고한 자료입니다.",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=525151"
+    },
+    {
+      "id": "d005",
+      "kind": "approval",
+      "date": "2026-05-26",
+      "title": "북아현3 재정비촉진구역 기부채납 계획 일부 변경 요청",
+      "source": "서울시 결재문서 · 부분공개",
+      "summary": "서울시 결재문서 목록에서 제목·생산일자·부분공개 상태가 확인됩니다. 본문 일부는 열람이 제한될 수 있습니다.",
+      "url": "https://jaegebal.com/gnotices/seoul-og-2026-122998?develop=2551&from=develop",
+      "notice": "목록 정보 · 부분공개"
+    },
+    {
+      "id": "d006",
+      "kind": "approval",
+      "date": "2026-04-07",
+      "title": "북아현3구역 임시총회 발의자에 의한 개최 승인 알림",
+      "source": "서대문구 결재문서 · 부분공개",
+      "summary": "서대문구 도심개발과의 2026년 4월 7일 문서입니다. 승인 알림의 제목·공개구분이 확인되며 첨부 열람은 제한될 수 있습니다.",
+      "url": "https://jaegebal.com/gnotices/sdm-og-2026-121865?develop=2551&from=develop",
+      "notice": "목록 정보 · 부분공개"
+    },
+    {
+      "id": "d007",
+      "kind": "approval",
+      "date": "2026-04-07",
+      "title": "조합원 발의 임시총회 개최 승인 요구서 검토결과 보고",
+      "source": "서대문구 결재문서 · 비공개",
+      "summary": "생산일자와 문서명이 공개된 목록 정보입니다. 비공개 문서로 상세 내용은 확인할 수 없습니다.",
+      "url": "https://jaegebal.com/gnotices/sdm-og-2026-121614?develop=2551&from=develop",
+      "notice": "본문 비공개"
+    },
+    {
+      "id": "d008",
+      "kind": "bid",
+      "date": "2025-06-09",
+      "title": "이주관리·범죄예방 용역 협력업체 선정 입찰",
+      "source": "서울시 정비사업 정보몽땅 · 조합입찰공고",
+      "summary": "이주관리 및 범죄예방 용역 협력업체 선정 공고입니다. 입찰서류 제출기한은 2025년 6월 16일로 종료됐습니다.",
+      "url": "https://cleanup.seoul.go.kr/assc/bidpblanc/vscr.do?cafeId=410100008007F14&cpage=2&othbcListSn=942184&searchCode=&searchValue=&signguCd=",
+      "notice": "마감"
+    },
+    {
+      "id": "d009",
+      "kind": "bid",
+      "date": "2025-06-09",
+      "title": "건축물 해체계획·해체공사 감리 용역 입찰",
+      "source": "서울시 정비사업 정보몽땅 · 조합입찰공고",
+      "summary": "해체계획서 작성, 인허가 및 해체공사 감리 용역을 위한 협력업체 선정 공고입니다. 2025년 6월 16일 마감된 기록입니다.",
+      "url": "https://cleanup.seoul.go.kr/assc/bidpblanc/vscr.do?cafeId=410100008007F14&cpage=2&othbcListSn=942190&searchCode=&searchValue=&signguCd=",
+      "notice": "마감"
+    },
+    {
+      "id": "d010",
+      "kind": "bid",
+      "date": "2025-06-09",
+      "title": "관리처분계획 타당성 검토 및 업무지원 용역 입찰",
+      "source": "서울시 정비사업 정보몽땅",
+      "summary": "관리처분계획 검토·업무지원 용역 협력업체 선정 공고입니다. 2025년 6월 16일 마감된 기록입니다.",
+      "url": "https://cleanup.seoul.go.kr/assc/bidpblanc/vscr.do?cafeId=410100008007F14&othbcListSn=942187",
+      "notice": "마감"
+    }
+  ]
+}
