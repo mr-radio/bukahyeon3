@@ -194,6 +194,27 @@
     .hub-tab.active{background:#173c54;color:#fff;border-color:#173c54}
     .hub-tab:focus-visible{outline:3px solid #e3ae72;outline-offset:3px}
     .hub-panel[hidden]{display:none}
+    /* Lightweight, readable information articles. No extra libraries or images. */
+    .info-intro{font-size:12px;color:#647b84;line-height:1.6;margin:0 0 14px}
+    .info-group{margin:18px 0 0}
+    .info-group:first-of-type{margin-top:8px}
+    .info-group h3{font-size:15px;color:#24485b;margin:0 0 9px;letter-spacing:-.4px}
+    .info-list{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+    .info-item{border-bottom:1px solid var(--line)}
+    .info-item:last-child{border-bottom:0}
+    .info-item summary{list-style:none;cursor:pointer;padding:14px 39px 14px 16px;position:relative}
+    .info-item summary::-webkit-details-marker{display:none}
+    .info-item summary:after{content:'+';position:absolute;right:17px;top:17px;color:#587785;font-size:17px;line-height:1}
+    .info-item[open] summary:after{content:'−'}
+    .info-item summary b{display:block;font-size:14px;color:#263f50;line-height:1.5}
+    .info-item summary span{display:block;font-size:11px;color:#74868d;line-height:1.55;margin-top:2px}
+    .info-item summary:hover{background:#f8faf9}
+    .info-item summary:focus-visible{outline:2px solid #377c77;outline-offset:-3px}
+    .info-answer{padding:0 16px 15px;font-size:12px;line-height:1.8;color:#526e7a}
+    .info-answer p{margin:0 0 7px}.info-answer p:last-child{margin-bottom:0}
+    .info-answer a,.info-source a{color:#2a6d7d;text-decoration:underline;text-underline-offset:3px}
+    .info-source{font-size:11px;line-height:1.65;color:#7b8a91;margin:14px 0 0}
+    @media(max-width:680px){.info-item summary{padding:12px 35px 12px 13px}.info-item summary:after{right:14px;top:14px}.info-item summary b{font-size:13px}.info-answer{padding:0 13px 13px}.info-group{margin-top:16px}}
     .hub-panel-note{font-size:12px;color:var(--muted);margin:0}
     .hub-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
     .compact-progress{padding-top:7px;padding-bottom:28px}
@@ -868,7 +889,7 @@
   <header class="site-header">
     <div class="wrap header-in">
       <a class="brand" href="#top" aria-label="북아현3구역 재개발 인포 홈페이지 맨 위로 돌아가기"><span class="brand-mark" aria-hidden="true">▥</span><span><strong>북아현3구역 재개발 인포</strong><small>개인 운영 · 공식 홈페이지 아님</small></span></a>
-      <nav class="nav" id="nav" aria-label="주요 메뉴"><a href="#about">사업개요</a><a href="#transport">입지·교통</a><a href="#plans">배치도·평면도</a><a href="#community">커뮤니티</a><a href="#market">시세·계산기</a><a href="#news-hub">소식·자료실</a></nav>
+      <nav class="nav" id="nav" aria-label="주요 메뉴"><a href="#about">사업개요</a><a href="#transport">입지·교통</a><a href="#plans">배치도·평면도</a><a href="#community">커뮤니티</a><a href="#market">시세·계산기</a><a href="#news-hub">소식·정보·자료실</a></nav>
       <button class="share-button" id="shareSite" type="button" aria-label="북아현3구역 홈페이지 링크 공유"><span aria-hidden="true">↗</span><span>공유</span></button>
       <button class="menu-button" id="menuButton" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">☰</button>
     </div>
@@ -1108,9 +1129,10 @@
       </div>
     </div></section>
     <section class="section resource-hub detail-content" id="news-hub"><div class="wrap">
-      <div class="section-head"><div><span class="kicker">NEWS & ARCHIVE</span><h2>소식·자료실</h2><p class="section-desc">최근 소식과 공개 자료</p></div></div>
-      <div class="hub-tabs" role="tablist" aria-label="소식·자료실 메뉴">
+      <div class="section-head"><div><span class="kicker">NEWS & GUIDE</span><h2>소식·정보·자료실</h2><p class="section-desc">최근 소식 · 재개발 안내 · 공개 자료</p></div></div>
+      <div class="hub-tabs" role="tablist" aria-label="소식·정보·자료실 메뉴">
         <button class="hub-tab active" type="button" id="hubTabNews" data-hub="news" role="tab" aria-controls="news" aria-selected="true">소식</button>
+        <button class="hub-tab" type="button" id="hubTabInformation" data-hub="information" role="tab" aria-controls="information" aria-selected="false" tabindex="-1">정보</button>
         <button class="hub-tab" type="button" id="hubTabResources" data-hub="resources" role="tab" aria-controls="resources" aria-selected="false" tabindex="-1">자료실</button>
       </div>
       <div class="hub-panel" id="news" role="tabpanel" aria-labelledby="hubTabNews">
@@ -1127,6 +1149,37 @@
         <div class="news-cards" id="newsCards" aria-live="polite" tabindex="0" aria-label="소식 목록"><p class="feed-load-message">소식 불러오는 중...</p></div>
         <p class="news-scroll-hint" id="newsScrollHint" hidden>아래로 스크롤하면 이전 소식을 더 볼 수 있습니다 ↓</p>
         <p class="feed-disclaimer">요약 목록 · 원문 링크 확인 · 수동 갱신(실시간 수집 아님).</p>
+      </div>
+      <div class="hub-panel" id="information" role="tabpanel" aria-labelledby="hubTabInformation" hidden>
+        <p class="info-intro">궁금한 제목을 누르면 설명이 열립니다. 재개발 기본 개념과 북3 정보를 쉽게 정리했습니다.</p>
+        <div class="info-group">
+          <h3>북3 바로알기</h3>
+          <div class="info-list">
+            <details class="info-item"><summary><b>북아현3구역은 어떤 사업인가요?</b><span>서대문구 북아현동의 대규모 주택재개발</span></summary><div class="info-answer"><p>서울 서대문구 북아현동 3-66번지 일대의 주택재개발정비사업입니다. 기존 주거지와 기반시설을 정비해 새 주거단지를 조성하는 사업입니다.</p><p><a href="https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=410100008007F14" target="_blank" rel="noopener noreferrer">서울시 공식 사업 정보 ↗</a></p></div></details>
+            <details class="info-item"><summary><b>5,310세대는 확정된 숫자인가요?</b><span>변경 추진 규모 · 최종 인가 계획과 구분</span></summary><div class="info-answer"><p>2026년 4월 보도에 따르면 5,310세대 규모의 계획이 언급됐습니다. 이는 변경 추진 중인 규모로, 최종 인가·분양 세대수가 확정됐다는 뜻은 아닙니다. 확정 수치는 향후 인가 고시와 조합 공고에서 확인해야 합니다.</p><p><a href="https://news.mtn.co.kr/news-detail/2026043017210775399" target="_blank" rel="noopener noreferrer">관련 보도 ↗</a> · <a href="https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=410100008007F14" target="_blank" rel="noopener noreferrer">공식 현황 ↗</a></p></div></details>
+            <details class="info-item"><summary><b>사업은 지금 어느 단계인가요?</b><span>기존 사업시행인가와 변경인가는 서로 다른 절차</span></summary><div class="info-answer"><p>북아현3구역은 과거 사업시행계획 인가 이력이 있습니다. 현재 추진하는 계획 변경이 인가되었는지는 별도로 확인해야 하며, '변경안 추진'을 '변경인가 완료'로 받아들이면 안 됩니다.</p><p><a href="https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=410100008007F14" target="_blank" rel="noopener noreferrer">최신 고시·추진경과 확인 ↗</a></p></div></details>
+            <details class="info-item"><summary><b>평면도와 커뮤니티 도면은 확정본인가요?</b><span>현재 소개된 도면은 계획 참고 자료</span></summary><div class="info-answer"><p>홈페이지의 배치도·평면도·커뮤니티 도면과 시공사 제안 영상은 계획을 이해하기 위한 자료입니다. 타입, 면적, 시설 위치와 마감은 이후 인허가·설계 과정에서 바뀔 수 있습니다.</p><p><a href="#plans">배치도·평면도 보기 ↗</a> · <a href="#community">커뮤니티 도면 보기 ↗</a></p></div></details>
+          </div>
+        </div>
+        <div class="info-group">
+          <h3>재개발 기초</h3>
+          <div class="info-list">
+            <details class="info-item"><summary><b>재개발은 어떤 순서로 진행되나요?</b><span>조합설립 → 사업시행인가 → 관리처분 → 이주·착공</span></summary><div class="info-answer"><p>일반적으로 정비구역 지정, 조합설립, 사업시행계획인가, 분양신청, 관리처분계획인가, 이주·철거, 착공, 준공·입주, 청산 순서로 진행됩니다. 단계별 변경 인가나 소송 등으로 일정이 달라질 수 있습니다.</p></div></details>
+            <details class="info-item"><summary><b>사업시행인가와 관리처분인가는 무엇이 다른가요?</b><span>무엇을 지을지 / 권리를 어떻게 배분할지</span></summary><div class="info-answer"><p><b>사업시행계획인가</b>는 건축·정비사업의 시행계획을 인가받는 절차입니다. <b>관리처분계획인가</b>는 종전자산과 분양신청 등을 바탕으로 조합원별 권리 배분과 부담 관계를 구체화하는 절차입니다. 두 인가는 구분해서 봐야 합니다.</p></div></details>
+            <details class="info-item"><summary><b>조합원 분양과 일반분양은 어떻게 다른가요?</b><span>기존 권리자의 분양 / 일반 청약 대상 분양</span></summary><div class="info-answer"><p>조합원 분양은 정비사업의 분양대상 자격을 갖춘 권리자에게 주택을 공급하는 과정이고, 일반분양은 배정 이후 일반 수요자에게 공급하는 물량입니다. 조합원이라도 분양 자격·선택 조건은 정관과 관계 법령을 확인해야 합니다.</p></div></details>
+            <details class="info-item"><summary><b>조합·시공사·구청은 각각 무엇을 하나요?</b><span>사업 추진 / 건설 수행 / 인가·감독</span></summary><div class="info-answer"><p>조합은 정비사업의 시행 주체로 의사결정과 사업을 추진합니다. 시공사는 계약에 따라 건설공사를 수행하고, 관할 행정청은 법령에 따라 인허가·관리 감독 업무를 맡습니다. 각 역할과 책임은 계약·법령에 따라 달라집니다.</p></div></details>
+          </div>
+        </div>
+        <div class="info-group">
+          <h3>시세·분담금 이해</h3>
+          <div class="info-list">
+            <details class="info-item"><summary><b>감정가와 권리가액은 같은 금액인가요?</b><span>종전자산 평가액과 조합원 권리가액은 구별</span></summary><div class="info-answer"><p>감정평가액은 종전 토지·건물 등의 평가금액입니다. 권리가액은 일반적인 관리처분 계산에서 종전자산 감정평가액에 비례율을 적용해 산정하기도 하므로 서로 다를 수 있습니다. 실제 금액은 해당 사업의 관리처분계획을 확인해야 합니다.</p></div></details>
+            <details class="info-item"><summary><b>프리미엄과 매매가는 어떻게 다른가요?</b><span>프리미엄은 호가의 추가 가치, 매매가는 거래 대금</span></summary><div class="info-answer"><p>홈페이지 계산기는 이해를 돕기 위해 <b>매매가 = 감정가 + 프리미엄</b>으로 계산합니다. 매물 광고의 프리미엄은 실제 체결가격이 아니며, 거래 대상 권리·계약 조건에 따라 계산 기준도 달라질 수 있습니다.</p></div></details>
+            <details class="info-item"><summary><b>추가분담금은 어떻게 계산하나요?</b><span>단순 계산과 실제 조합 정산 금액은 다를 수 있음</span></summary><div class="info-answer"><p>이 홈페이지에서는 <b>추가분담금(단순 계산) = 조합원 분양가 − 감정가</b>를 사용합니다. 그러나 실제 분담금은 권리가액·비례율, 사업비 변경, 정산 내역 등에 따라 달라집니다. 계산기 결과를 확정 납부액으로 보면 안 됩니다.</p><p><a href="#market">안전마진 계산기 ↗</a></p></div></details>
+            <details class="info-item"><summary><b>입주권 매수 전에 무엇을 확인해야 하나요?</b><span>분양 자격·승계 가능 여부·추가 비용·최신 인가</span></summary><div class="info-answer"><p>조합원 지위 승계와 분양대상 자격, 권리관계·등기·점유, 미납금과 추가분담금, 세금·대출 가능 여부, 최신 인가·총회 자료를 확인해야 합니다. 개인별 요건이 달라 계약 전 전문가 검토가 필요할 수 있습니다.</p></div></details>
+          </div>
+        </div>
+        <p class="info-source">일반 이해를 돕기 위한 AI 작성 안내 · 작성 2026.10.24 · 최신 공고·인가 자료 우선 · <a href="https://cleanup.seoul.go.kr/" target="_blank" rel="noopener noreferrer">서울시 정비사업 정보몽땅 ↗</a> · <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer">국가법령정보센터 ↗</a></p>
       </div>
       <div class="hub-panel" id="resources" role="tabpanel" aria-labelledby="hubTabResources" hidden>
         <div class="feed-toolbar resource-toolbar">
@@ -1382,7 +1435,7 @@
         if(next!==-1){event.preventDefault();selectHub(hubTabs[next].dataset.hub,true)}
       });
     });
-    function showHashHub(){const key=location.hash.slice(1);if(['news','resources'].includes(key))selectHub(key);}
+    function showHashHub(){const key=location.hash.slice(1);if(['news','information','resources'].includes(key))selectHub(key);}
     window.addEventListener('hashchange',showHashHub);
     showHashHub();
     document.querySelectorAll('a[href="#resources"]').forEach(link=>link.addEventListener('click',()=>selectHub('resources')));
