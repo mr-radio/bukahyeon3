@@ -27,6 +27,8 @@
 .search-panel .result{padding:6px 10px}
 @media(max-width:800px){.search-panel{padding:7px 9px;margin-bottom:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.visitor-totals{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:8px;font-size:11px;font-variant-numeric:tabular-nums}
+.visitor-totals b{color:#37586c;font-weight:800}
 </style>
 </head>
 <body>
@@ -345,7 +347,7 @@
  </main>
 </div>
 <button type="button" id="up" class="floating-top" aria-label="맨 위로">↑</button>
-<footer class="footer">북아현3구역 정보 · 조합 정관 열람용 페이지 (비공식)</footer>
+<footer class="footer">북아현3구역 인포 · 조합 정관 열람용 페이지 (비공식)<div class="visitor-totals" title="브라우저 기준 하루 1회 집계한 참고 수치입니다."><span>오늘 방문자 <b data-visitor-today aria-live="polite">—</b></span><span>·</span><span>누적 방문자 <b data-visitor-total aria-live="polite">—</b></span></div></footer>
 <script>
 (() => {
 'use strict';
@@ -439,4 +441,5 @@ if(query) input.value=query;
 showSearch(input.value);
 })();
 </script>
+<script src="visitor-counter.js" defer></script>
 </body></html>
