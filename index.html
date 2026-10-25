@@ -189,12 +189,11 @@
 
     /* Compact, undivided news and resource lists */
     .resource-hub{padding-top:52px;padding-bottom:57px}
-    .hub-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0 17px}
+    .hub-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:18px 0 17px}
     .hub-tab{min-height:48px;border-radius:10px;border:1px solid #dbe4e5;background:#fff;color:#5f7380;font-size:15px;font-weight:850;transition:background .18s,border-color .18s}
     .hub-tab.active{background:#173c54;color:#fff;border-color:#173c54}
     .hub-tab:focus-visible{outline:3px solid #e3ae72;outline-offset:3px}
     .hub-panel[hidden]{display:none}
-    #information{min-height:110px}
     .hub-panel-note{font-size:12px;color:var(--muted);margin:0}
     .hub-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
     .compact-progress{padding-top:7px;padding-bottom:28px}
@@ -492,10 +491,8 @@
 
     /* Show three entries per hub list, then allow page scroll to continue at the end. */
     #news .news-cards.scroll-three,
-    #information .resource-links.scroll-three,
     #resources .resource-feed.scroll-three{overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:auto;scrollbar-gutter:stable;scrollbar-width:thin;touch-action:pan-y}
     #news .news-cards.scroll-three:focus-visible,
-    #information .resource-links.scroll-three:focus-visible,
     #resources .resource-feed.scroll-three:focus-visible{outline:2px solid #3d8d9b;outline-offset:2px}
     .news-scroll-hint{font-size:11px;color:#527382;margin:7px 0 0;text-align:right}
     .resource-toolbar .feed-filters{flex:1}
@@ -635,7 +632,7 @@
     .margin-calc{padding:12px 14px}
     .margin-step{margin-top:6px}
     .margin-hint{font-size:10px;margin-top:4px;margin-bottom:4px}
-    .hub-tabs{max-width:370px;margin:12px 0 15px;gap:8px}
+    .hub-tabs{max-width:250px;margin:12px 0 15px;gap:8px}
     .hub-tab{border-radius:9px;min-height:43px}
     .hub-panel-head{margin-bottom:9px}
     .hub-panel-note{font-size:11px}
@@ -884,7 +881,7 @@
   <header class="site-header">
     <div class="wrap header-in">
       <a class="brand" href="#top" aria-label="북아현3구역 재개발 인포 홈페이지 맨 위로 돌아가기"><span class="brand-mark" aria-hidden="true">▥</span><span><strong>북아현3구역 재개발 인포</strong><small>개인 운영 · 공식 홈페이지 아님</small></span></a>
-      <nav class="nav" id="nav" aria-label="주요 메뉴"><a href="#about">사업개요</a><a href="#transport">입지·교통</a><a href="#plans">배치도·평면도</a><a href="#community">커뮤니티</a><a href="#market">시세·계산기</a><a href="#news-hub">소식·정보·자료실</a></nav>
+      <nav class="nav" id="nav" aria-label="주요 메뉴"><a href="#about">사업개요</a><a href="#transport">입지·교통</a><a href="#plans">배치도·평면도</a><a href="#community">커뮤니티</a><a href="#market">시세·계산기</a><a href="#news-hub">소식·자료실</a></nav>
       <button class="share-button" id="shareSite" type="button" aria-label="북아현3구역 홈페이지 링크 공유"><span aria-hidden="true">↗</span><span>공유</span></button>
       <button class="menu-button" id="menuButton" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">☰</button>
     </div>
@@ -1124,10 +1121,9 @@
       </div>
     </div></section>
     <section class="section resource-hub detail-content" id="news-hub"><div class="wrap">
-      <div class="section-head"><div><span class="kicker">NEWS & GUIDE</span><h2>소식·정보·자료실</h2><p class="section-desc">최근 소식 · 재개발 안내 · 공개 자료</p></div></div>
-      <div class="hub-tabs" role="tablist" aria-label="소식·정보·자료실 메뉴">
+      <div class="section-head"><div><span class="kicker">NEWS & RESOURCES</span><h2>소식·자료실</h2><p class="section-desc">최근 소식 · 공개 자료</p></div></div>
+      <div class="hub-tabs" role="tablist" aria-label="소식·자료실 메뉴">
         <button class="hub-tab active" type="button" id="hubTabNews" data-hub="news" role="tab" aria-controls="news" aria-selected="true">소식</button>
-        <button class="hub-tab" type="button" id="hubTabInformation" data-hub="information" role="tab" aria-controls="information" aria-selected="false" tabindex="-1">정보</button>
         <button class="hub-tab" type="button" id="hubTabResources" data-hub="resources" role="tab" aria-controls="resources" aria-selected="false" tabindex="-1">자료실</button>
       </div>
       <div class="hub-panel" id="news" role="tabpanel" aria-labelledby="hubTabNews">
@@ -1145,7 +1141,6 @@
         <p class="news-scroll-hint" id="newsScrollHint" hidden>아래로 스크롤하면 이전 소식을 더 볼 수 있습니다 ↓</p>
         <p class="feed-disclaimer">요약 목록 · 원문 링크 확인 · 수동 갱신(실시간 수집 아님).</p>
       </div>
-      <div class="hub-panel" id="information" role="tabpanel" aria-labelledby="hubTabInformation" hidden></div>
       <div class="hub-panel" id="resources" role="tabpanel" aria-labelledby="hubTabResources" hidden>
         <div class="feed-toolbar resource-toolbar">
           <div class="feed-filters" role="tablist" aria-label="자료실 분류">
@@ -1420,7 +1415,7 @@
         if(next!==-1){event.preventDefault();selectHub(hubTabs[next].dataset.hub,true)}
       });
     });
-    function showHashHub(){const key=location.hash.slice(1);if(['news','information','resources'].includes(key))selectHub(key);}
+    function showHashHub(){const key=location.hash.slice(1);if(['news','resources'].includes(key))selectHub(key);}
     window.addEventListener('hashchange',showHashHub);
     showHashHub();
     document.querySelectorAll('a[href="#resources"]').forEach(link=>link.addEventListener('click',()=>selectHub('resources')));
