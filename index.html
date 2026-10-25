@@ -727,6 +727,10 @@
     /* Market hierarchy: 3구역 → 주변 아파트 → 2구역 참고 → 계산기. */
     .market-projects-primary,.market-projects-secondary{grid-template-columns:minmax(0,1fr)}
     .market-projects-primary{margin-bottom:16px}
+    .market-listing-link{display:inline-flex;align-items:center;gap:8px;min-height:39px;margin-top:12px;padding:8px 12px;border:1px solid #c7ded4;border-radius:9px;background:#f4faf7;color:#246956;font-size:12px;font-weight:800;line-height:1.35;text-decoration:none;transition:background .2s,border-color .2s}
+    .market-listing-link:hover{background:#e9f5ee;border-color:#9dcab6}
+    .market-listing-link:focus-visible{outline:3px solid #e6b385;outline-offset:3px}
+    .market-listing-link .naver-mark{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:4px;background:#03c75a;color:#fff;font-size:12px;font-weight:900;line-height:1;flex:none}
     .market-projects-secondary{margin-top:14px;margin-bottom:0}
     .market-projects-secondary .market-premium-card{background:#fbfcfb}
     .market-projects-secondary+.market-alert{margin-top:9px;margin-bottom:18px}
@@ -1063,6 +1067,7 @@
               <span class="market-premium-average"><span>광고 평균</span><strong>11.39억</strong></span>
             </div>
           </div>
+          <a class="market-listing-link" href="https://naver.me/G6RJIqgQ" target="_blank" rel="noopener noreferrer" aria-label="네이버부동산에서 북아현3구역 매물 보기, 새 창 열림"><span class="naver-mark" aria-hidden="true">N</span>네이버부동산 매물 보기 <span aria-hidden="true">↗</span></a>
         </article>
       </div>
       <h3 class="market-subhead">주변 아파트 거래 사례 · 전용 84㎡ 내외</h3>
