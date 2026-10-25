@@ -787,7 +787,8 @@
     .buyer-insights{background:#f1f5f3}
     .buyer-insights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
     .insight-card{background:#fff;border:1px solid #dce7e2;border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
-    .insight-card[open]{border-color:#b6cdc5;box-shadow:0 8px 22px rgba(23,51,75,.055)}
+    .insight-card[open]{grid-column:1/-1;border-color:#b6cdc5;box-shadow:0 8px 22px rgba(23,51,75,.055)}
+    .insight-card[open] summary{min-height:0}
     .insight-card summary{position:relative;list-style:none;cursor:pointer;padding:18px 43px 18px 18px;min-height:124px}
     .insight-card summary::-webkit-details-marker{display:none}
     .insight-card summary::after{content:"+";position:absolute;right:18px;top:20px;color:#a07653;font-size:22px;font-weight:400;line-height:1}
@@ -798,8 +799,13 @@
     .insight-tag{color:#668178;font-weight:750}
     .insight-title{display:block;color:var(--navy);font-size:16px;font-weight:850;letter-spacing:-.45px;line-height:1.5}
     .insight-summary{display:block;margin-top:5px;color:#74858b;font-size:12px;line-height:1.55}
-    .insight-body{border-top:1px solid #edf1ef;padding:13px 18px 17px}
-    .insight-body p{margin:0;color:#536b75;font-size:12px;line-height:1.85}
+    .insight-body{border-top:1px solid #edf1ef;padding:16px 20px 18px}
+    .insight-body p{margin:0;color:#536b75;font-size:13px;line-height:1.8}
+    .insight-body p+p{margin-top:10px}
+    .insight-body .insight-lead{margin:0 0 12px;padding-left:12px;border-left:3px solid #2c8773;color:var(--navy);font-size:15px;font-weight:850;line-height:1.7}
+    .insight-points{margin:10px 0;padding-left:20px;color:#536b75;font-size:13px;line-height:1.8}
+    .insight-points li+li{margin-top:4px}
+    .insight-body .insight-note{margin-top:12px;color:#798990;font-size:11px;line-height:1.65}
     .insight-body a{display:inline-block;margin-top:10px;color:#2d7465;font-size:12px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
 
     @media(max-width:680px){
@@ -822,7 +828,8 @@
       .insight-card summary{min-height:0;padding:15px 41px 15px 16px}
       .insight-card summary::after{right:16px;top:18px}
       .insight-title{font-size:15px}
-      .insight-body{padding:12px 16px 15px}
+      .insight-body{padding:13px 16px 16px}
+      .insight-body .insight-lead{font-size:14px}
     }
 
     /* Single-line latest-news ticker beneath the compact aerial image. */
@@ -1164,28 +1171,73 @@
         <div class="section-head"><div><span class="kicker">BUKAHYEON 3 · INSIGHTS</span><h2 id="insightsTitle">북아현3구역, 궁금한 6가지</h2><p class="section-desc">미래 가치와 사업 계획, 매수 전에 알아둘 내용을 정리했습니다.</p></div></div>
         <div class="buyer-insights-grid">
           <details class="insight-card">
-            <summary><span class="insight-meta"><span class="insight-number">01</span><span class="insight-tag">미래 시세</span></span><strong class="insight-title">완공되면 시세는 얼마일까?</strong><span class="insight-summary">주변 신축 아파트와 비교해 보는 미래 가치</span></summary>
-            <div class="insight-body"><p>준공 후 시세는 아직 알 수 없습니다. 주변 신축 아파트의 실거래 사례와 입지·규모를 참고할 수 있지만, 개별 거래가격이 북아현3구역의 미래 가격을 보장하지는 않습니다.</p><a href="#market">주변 거래 사례 보기 ↗</a></div>
+            <summary><span class="insight-meta"><span class="insight-number">01</span><span class="insight-tag">미래 시세</span></span><strong class="insight-title">완공되면 시세는 얼마일까?</strong><span class="insight-summary">최신축·최고급화·최대규모, RR 30억 원 이상 가능성</span></summary>
+            <div class="insight-body">
+              <p class="insight-lead">2034년 전후 완공을 가정하면, 북아현3구역 전용 84㎡ 로열동·로열층(RR)은 30억 원을 넘어 주변 대표 아파트의 시세를 뛰어넘을 잠재력이 있습니다.</p>
+              <p>핵심 경쟁력은 단순한 연식 차이가 아닌 <strong>최신축·최고급화·최대규모</strong>의 결합입니다. 특화 설계와 약 5,310세대 규모의 계획이 실현된다면 마포·아현을 대표하는 새 랜드마크로 자리매김할 수 있습니다.</p>
+              <p>주변 비교 단지인 마포자이힐스테이트 라첼스와 경희궁자이는 이미 높은 가격대를 형성하고 있습니다. 북아현3구역이 완공되는 시점에는 새 아파트의 상품성과 규모에 따른 차별화가 기대됩니다.</p>
+              <p>현재 시세 기준 30억 원을 전망해 볼 수 있고, 향후 7~8년의 물가 상승과 시장 여건까지 고려하면 그 이상도 가능하다는 <strong>기대 시나리오</strong>입니다.</p>
+              <p class="insight-note">30억 원 이상은 전용 84㎡ RR에 대한 전망이지 확정 시세가 아닙니다. 사업계획·준공 시기·부동산 시장에 따라 달라질 수 있습니다.</p>
+              <a href="#market">주변 시세 비교 보기 ↗</a>
+            </div>
           </details>
           <details class="insight-card">
-            <summary><span class="insight-meta"><span class="insight-number">02</span><span class="insight-tag">사업 일정</span></span><strong class="insight-title">완공과 입주는 언제일까?</strong><span class="insight-summary">현재 사업 단계부터 남은 절차까지</span></summary>
-            <div class="insight-body"><p>현재 확인된 자료만으로는 준공·입주일을 확정할 수 없습니다. 홈페이지에는 사업시행변경인가 추진 단계로 정리돼 있으며, 이후 관리처분·이주·철거·착공 등 절차가 남아 있습니다. 일정은 조합과 관할 기관의 최신 공고로 확인해야 합니다.</p><a href="#progress">사업 추진현황 보기 ↗</a></div>
+            <summary><span class="insight-meta"><span class="insight-number">02</span><span class="insight-tag">사업 일정</span></span><strong class="insight-title">완공과 입주는 언제일까?</strong><span class="insight-summary">사업이 순항한다면 2034년 준공·입주 기대</span></summary>
+            <div class="insight-body">
+              <p class="insight-lead">사업이 순조롭게 진행된다면, 2034년 준공 및 입주를 기대할 수 있습니다.</p>
+              <p>북아현3구역은 2011년 사업시행인가를 받았지만 여러 문제로 사업이 지연됐습니다. 현재는 <strong>사업시행계획 변경인가를 추진</strong>하며 새로운 조합장과 임원 선임총회를 준비하고 있습니다.</p>
+              <p>박운기 서대문구청장의 사업 정상화 지원 의지도 전해지고 있어, 새 집행부가 구성되면 사업에 속도가 붙을 것으로 기대됩니다.</p>
+              <p><strong>목표 일정</strong>은 2027년 말~2028년 초 관리처분인가, 이후 이주·철거 약 2년, 공사 약 4년을 거쳐 2034년 중 준공·입주하는 흐름입니다.</p>
+              <p class="insight-note">위 일정은 사업시행계획 변경인가 등 남은 절차가 원활하게 진행된다는 가정에 따른 목표이며, 확정 일정은 아닙니다.</p>
+              <a href="#progress">사업 추진현황 보기 ↗</a>
+            </div>
           </details>
           <details class="insight-card">
-            <summary><span class="insight-meta"><span class="insight-number">03</span><span class="insight-tag">매수 비용</span></span><strong class="insight-title">안전마진은 얼마나 될까?</strong><span class="insight-summary">매수가·추가분담금·예상 시세를 함께 비교</span></summary>
-            <div class="insight-body"><p>안전마진은 가정한 준공 시세에서 총매수가를 빼는 단순 비교입니다. 실제 매수 판단에는 권리가액·비례율, 세금과 금융비용, 추가분담금 및 사업 일정 변동도 고려해야 합니다. 계산 결과는 확정 수익이 아닙니다.</p><a href="#market">안전마진 계산기 보기 ↗</a></div>
+            <summary><span class="insight-meta"><span class="insight-number">03</span><span class="insight-tag">안전마진</span></span><strong class="insight-title">안전마진은 얼마나 될까?</strong><span class="insight-summary">총매수 약 20억 원·예상 시세 30억 원 가정</span></summary>
+            <div class="insight-body">
+              <p class="insight-lead">총매수비용을 약 20억 원, 완공 후 시세를 30억 원으로 가정하면 약 10억 원의 시세차익을 기대해 볼 수 있습니다.</p>
+              <p>현재 프리미엄은 <strong>11억 원 중반</strong> 수준을 기준으로, <strong>2025년 조합 추산 조합원 분양가 7.9억 원</strong>을 더하면 단순 합산 약 19억 원대 중반입니다. 관련 비용까지 감안한 약 20억 원을 총매수비용으로 가정했습니다.</p>
+              <p>북아현3구역은 대규모 일반분양 수입이 기대되는 사업지입니다. 일반분양 수익으로 공사비 증가분을 상당 부분 상쇄할 수 있다면 추가분담금 부담도 크지 않을 것이라는 전망이 있습니다.</p>
+              <p>완공 후 전용 84㎡ RR의 가치를 30억 원으로 예상할 경우, 매수 시점에 따라 <strong>약 10억 원의 가격 차이</strong>가 발생한다는 계산입니다.</p>
+              <p class="insight-note">10억 원은 확정 ‘안전마진’이나 순수익이 아닌 가정상 차액입니다. 분양가·프리미엄·추가분담금 및 취득세·금융비용 등은 변동될 수 있습니다.</p>
+              <a href="#market">시세·안전마진 계산기 보기 ↗</a>
+            </div>
           </details>
           <details class="insight-card">
-            <summary><span class="insight-meta"><span class="insight-number">04</span><span class="insight-tag">사업 규모</span></span><strong class="insight-title">몇 세대 규모로 조성될까?</strong><span class="insight-summary">기존 공개 기준과 5,310세대 변경 추진안</span></summary>
-            <div class="insight-body"><p>홈페이지에는 기존 공개 기준 3,633세대와 5,310세대 변경 추진안이 구분돼 있습니다. 변경 추진안을 최종 확정 세대수로 보아서는 안 되며, 실제 규모는 최신 인허가 자료 확인이 필요합니다.</p><a href="#about">사업개요 보기 ↗</a></div>
+            <summary><span class="insight-meta"><span class="insight-number">04</span><span class="insight-tag">입지·교통</span></span><strong class="insight-title">입지와 교통의 강점은 무엇일까?</strong><span class="insight-summary">CBD 약 5분·YBD 약 10분·GTX-A 강남 접근 기대</span></summary>
+            <div class="insight-body">
+              <p class="insight-lead">광화문·시청·을지로(CBD) 약 5분, 여의도(YBD) 약 10분! GTX-A 삼성역 정차까지 실현되면 강남(GBD) 접근성도 크게 개선되는 서울 핵심 입지입니다.</p>
+              <p>북아현3구역은 서울 도심과 마포·신촌 생활권 사이에 위치하며, 2호선 아현역과 2·5호선 충정로역 등을 이용할 수 있습니다.</p>
+              <ul class="insight-points">
+                <li><strong>CBD 광화문</strong> — 충정로역에서 5호선 약 5분</li>
+                <li><strong>CBD 시청·을지로</strong> — 충정로역에서 2호선 약 5분</li>
+                <li><strong>YBD 여의도</strong> — 충정로역에서 5호선 약 10분</li>
+                <li><strong>GBD 강남</strong> — GTX-A 삼성역 정차 개통 후, 서울역에서 삼성역까지 약 5분 예상</li>
+              </ul>
+              <p>여기에 신촌·이대의 교육·쇼핑·문화 인프라까지 더해져 <strong>직주근접과 생활 편의성</strong>을 함께 누릴 수 있는 입지입니다.</p>
+              <p class="insight-note">시간은 역간 열차 탑승 기준 대략값으로 도보·대기·환승 시간을 제외합니다. 삼성역 정차 및 소요시간은 장래 계획에 따른 예상입니다.</p>
+              <a href="#transport">교통 경로·소요시간 보기 ↗</a>
+            </div>
           </details>
           <details class="insight-card">
-            <summary><span class="insight-meta"><span class="insight-number">05</span><span class="insight-tag">고급화</span></span><strong class="insight-title">어떤 특화 설계가 계획됐을까?</strong><span class="insight-summary">스카이브리지·커뮤니티·단지 특화 제안</span></summary>
-            <div class="insight-body"><p>스카이브리지와 커뮤니티 시설 등 다양한 계획 도면과 시공사 제안 영상을 확인할 수 있습니다. 제안 이미지와 참고 도면은 확정 설계·마감과 다를 수 있으므로 실제 적용 여부를 별도로 확인해야 합니다.</p><a href="#community">커뮤니티·제안 영상 보기 ↗</a></div>
+            <summary><span class="insight-meta"><span class="insight-number">05</span><span class="insight-tag">고급화</span></span><strong class="insight-title">어떤 특화 설계가 계획됐을까?</strong><span class="insight-summary">강북 최초 목표 스카이브리지·수영장 2곳 등</span></summary>
+            <div class="insight-body">
+              <p class="insight-lead">북아현3구역은 강북 최초를 목표로 하는 스카이브리지와 50m 수영장 등 차별화된 특화시설을 통해 강북 최고급 주거단지를 지향합니다.</p>
+              <p>단지를 상징하는 <strong>스카이브리지</strong>와 함께, <strong>50m 수영장 등 수영장 2개소</strong>, <strong>교보문고 유치</strong>, <strong>실내 클라이밍장</strong> 등이 특화시설 구상으로 언급되고 있습니다.</p>
+              <p>운동·독서·문화·휴식을 단지 안에서 누릴 수 있는 리조트형 주거환경을 지향하며, <strong>최신축·최고급화·최대급 규모</strong>가 결합된 차별화된 주거 가치를 기대할 수 있습니다.</p>
+              <p class="insight-note">‘강북 최초’ 여부와 시설별 실제 적용·운영 주체, 교보문고 입점, 최종 설계는 아직 확정된 것으로 볼 수 없습니다.</p>
+              <a href="#community">특화시설·제안 영상 보기 ↗</a>
+            </div>
           </details>
           <details class="insight-card">
-            <summary><span class="insight-meta"><span class="insight-number">06</span><span class="insight-tag">입지·교통</span></span><strong class="insight-title">입지와 교통의 강점은 무엇일까?</strong><span class="insight-summary">주변 지하철역과 주요 업무지구 연결</span></summary>
-            <div class="insight-body"><p>주변 지하철역과 시청·광화문·여의도 등 주요 업무지구 연결을 지도로 살펴볼 수 있습니다. 표시된 이동시간은 도보와 대기시간을 제외한 참고값이며, 장래 철도 계획은 현재 이용 가능한 노선과 구분해야 합니다.</p><a href="#transport">입지·교통 지도 보기 ↗</a></div>
+            <summary><span class="insight-meta"><span class="insight-number">06</span><span class="insight-tag">사업 규모</span></span><strong class="insight-title">몇 세대 규모로 조성될까?</strong><span class="insight-summary">강북 최대급을 목표로 하는 약 5,310세대 계획</span></summary>
+            <div class="insight-body">
+              <p class="insight-lead">북아현3구역은 약 5,310세대 규모를 추진하는 강북권 최대급 재개발 사업지로, 완공 후 서울 강북을 대표하는 초대형 랜드마크 단지로 성장할 잠재력을 갖추고 있습니다.</p>
+              <p><strong>5,000세대 이상의 압도적인 규모</strong>는 풍부한 조경과 커뮤니티 시설, 다양한 생활 편의시설을 실현할 수 있는 기반입니다.</p>
+              <p>여기에 최신 주거 설계와 최고급화 계획까지 더해진다면, 북아현3구역은 단순한 대단지를 넘어 <strong>강북을 대표하는 주거 랜드마크</strong>로 차별화될 수 있습니다.</p>
+              <p class="insight-note">5,310세대는 변경 추진안 기준으로 확정 세대수가 아닙니다. 최종 규모는 향후 인허가 과정에서 달라질 수 있습니다.</p>
+              <a href="#about">세대수·사업개요 보기 ↗</a>
+            </div>
           </details>
         </div>
       </div>
@@ -1645,8 +1697,8 @@
       GBD:{title:'GBD · 강남업무지구',badge:'GTX-A · 장래 계획',eyebrow:'GBD · GANGNAM BUSINESS DISTRICT',heading:'서울역에서 삼성역으로',future:true,
         lines:[{d:'M90 90 H670',color:'#c38a48',duration:'3.5s'}],
         stations:[{x:90,y:90,name:'서울역',labelY:129,color:'#c38a48',origin:true},{x:670,y:90,name:'삼성역',labelY:129,color:'#c38a48'}],
-        rows:[{dest:'삼성역',line:'GTX-A · 연결계획',minutes:4,planned:true}],
-        message:'삼성역 연결계획 · 약 4분 예상(도보·대기 제외, 확정 운행시간 아님).'}
+        rows:[{dest:'삼성역',line:'GTX-A · 연결계획',minutes:5,planned:true}],
+        message:'삼성역 연결계획 · 약 5분 예상(도보·대기 제외, 확정 운행시간 아님).'}
     };
     function commuteSvg(data){
       const backgrounds=data.lines.map(l=>`<path class="line-base" d="${l.d}"></path><path class="line-core" d="${l.d}" stroke="${l.color}"></path>`).join('');
