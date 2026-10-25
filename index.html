@@ -295,7 +295,7 @@
     .price-card p{font-size:11px;color:#778791;margin:4px 0 9px;line-height:1.5}
     .price-card a{font-size:11px;color:#44798e;text-decoration:underline}
     .market-alert{font-size:11px;color:#71828b;line-height:1.65;margin:12px 0 23px}
-    .margin-calc{background:#fff;border:1px solid #d7e3e2;border-radius:15px;padding:15px 17px}
+    .margin-calc{background:#fff;border:1px solid #d7e3e2;border-radius:15px;padding:15px 17px;scroll-margin-top:95px}
     .margin-calc-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:10px}
     .margin-calc h3{font-size:16px;margin:0}
     .margin-unit{font-size:11px;color:#70838c;white-space:nowrap}
@@ -807,6 +807,10 @@
     .insight-points li+li{margin-top:4px}
     .insight-body .insight-note{margin-top:12px;color:#798990;font-size:11px;line-height:1.65}
     .insight-body a{display:inline-block;margin-top:10px;color:#2d7465;font-size:12px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+    .insight-body .insight-calc-link{display:inline-flex;align-items:center;gap:8px;min-height:42px;margin-top:12px;padding:9px 13px;border:1px solid #b9d6c8;border-radius:9px;background:#edf6f1;color:#276b58;font-size:13px;font-weight:850;text-decoration:none;transition:background .2s,border-color .2s}
+    .insight-body .insight-calc-link:hover{background:#deefe6;border-color:#96c6ae}
+    .insight-body .insight-calc-link:focus-visible{outline:3px solid #e6b385;outline-offset:3px}
+    .insight-calc-link svg{flex:none;width:17px;height:17px}
 
     @media(max-width:680px){
       #progress .compact-stage b{font-size:11px;letter-spacing:-.45px;line-height:1.4}
@@ -1083,7 +1087,7 @@
       </div>
       <p class="market-alert">거래 사례(단지 평균 아님) · 신고 정정 여부는 <a class="market-source" href="https://rt.molit.go.kr/" target="_blank" rel="noopener noreferrer">국토부 실거래가 ↗</a> 확인 · 라첼스는 입주 전 거래입니다.</p>
 
-      <div class="margin-calc">
+      <div class="margin-calc" id="marginCalculator">
         <div class="margin-calc-head"><div><h3>안전마진 계산기</h3></div><span class="margin-unit">단위: 억 원</span></div>
 
         <section class="margin-step" aria-labelledby="marginStep1">
@@ -1200,7 +1204,7 @@
               <p>북아현3구역은 대규모 일반분양 수입이 기대되는 사업지입니다. 일반분양 수익으로 공사비 증가분을 상당 부분 상쇄할 수 있다면 추가분담금 부담도 크지 않을 것이라는 전망이 있습니다.</p>
               <p>완공 후 전용 84㎡ RR의 가치를 30억 원으로 예상할 경우, 매수 시점에 따라 <strong>약 10억 원의 가격 차이</strong>가 발생한다는 계산입니다.</p>
               <p class="insight-note">10억 원은 확정 ‘안전마진’이나 순수익이 아닌 가정상 차액입니다. 분양가·프리미엄·추가분담금 및 취득세·금융비용 등은 변동될 수 있습니다.</p>
-              <a href="#market">시세·안전마진 계산기 보기 ↗</a>
+              <a class="insight-calc-link" href="#marginCalculator"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"/></svg>안전마진 계산기 바로가기 <span aria-hidden="true">→</span></a>
             </div>
           </details>
           <details class="insight-card">
