@@ -489,7 +489,7 @@
     .resource-extra-heading{font-size:15px;margin:24px 0 10px}
     @media(max-width:680px){.feed-toolbar{align-items:stretch;gap:7px}.feed-filters{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.resource-toolbar .feed-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.feed-filter{font-size:11px;min-width:0;padding:4px 3px}.feed-search{width:100%}.resource-feed-card{padding:12px 14px}.resource-feed-card h4{font-size:13px}#news .news-card h3{font-size:14px}}
 
-    /* Show three entries per hub list, then allow page scroll to continue at the end. */
+    /* Show 2.5 news entries or 3 resource entries, with internal scrolling for the rest. */
     #news .news-cards.scroll-three,
     #resources .resource-feed.scroll-three{overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:auto;scrollbar-gutter:stable;scrollbar-width:thin;touch-action:pan-y}
     #news .news-cards.scroll-three:focus-visible,
@@ -1329,21 +1329,27 @@
         },220);
       },3000);
     }
-    function limitHubScroll(panelId,areaId,itemSelector,hintId){
+    function limitHubScroll(panelId,areaId,itemSelector,hintId,visibleCount=3){
       if($(panelId).hidden)return;
       const area=$(areaId),hint=$(hintId);
       const items=[...area.querySelectorAll(itemSelector)];
       area.style.maxHeight='';
-      area.classList.toggle('scroll-three',items.length>3);
-      if(hint)hint.hidden=items.length<=3;
-      if(items.length>3){
+      const needsScroll=items.length>visibleCount;
+      area.classList.toggle('scroll-three',needsScroll);
+      if(hint)hint.hidden=!needsScroll;
+      if(needsScroll){
         const first=items[0].getBoundingClientRect();
-        const third=items[2].getBoundingClientRect();
-        area.style.maxHeight=Math.ceil(third.bottom-first.top+1)+'px';
+        const fullCount=Math.floor(visibleCount);
+        const fraction=visibleCount-fullCount;
+        const lastFull=items[fullCount-1].getBoundingClientRect();
+        const bottom=fraction
+          ? items[fullCount].getBoundingClientRect().top+items[fullCount].getBoundingClientRect().height*fraction
+          : lastFull.bottom;
+        area.style.maxHeight=Math.ceil(bottom-first.top+1)+'px';
       }
       area.scrollTop=0;
     }
-    function updateNewsScroll(){limitHubScroll('news','newsCards','.news-card','newsScrollHint')}
+    function updateNewsScroll(){limitHubScroll('news','newsCards','.news-card','newsScrollHint',2.5)}
     function updateResourceScroll(){limitHubScroll('resources','resourceCards','.resource-feed-card','resourceScrollHint')}
     function renderPosts(){
       const area=$('newsCards');area.replaceChildren();
