@@ -637,7 +637,15 @@
     .hub-panel-head{margin-bottom:9px}
     .hub-panel-note{font-size:11px}
     .feed-toolbar{margin-bottom:11px}
-    #news .news-card{padding:12px 16px}
+    #news .news-card{position:relative;padding:10px 42px 10px 15px}
+    #news .news-card::after{content:"›";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:#a57f5e;font-size:21px;font-weight:350;pointer-events:none}
+    #news .news-card:focus-visible{outline:2px solid #3d8d9b;outline-offset:-3px}
+    #news .news-feed-meta{flex-wrap:nowrap;gap:6px;margin-bottom:0;min-width:0;overflow:hidden;white-space:nowrap;font-size:10px;line-height:1.3}
+    #news .news-feed-meta>span{flex-shrink:0}
+    #news .news-feed-meta>span:nth-child(3){flex-shrink:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+    #news .news-card h3{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin:5px 0 3px;font-size:14px;line-height:1.35}
+    #news .news-card p{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;line-height:1.4}
+    #news .news-card .news-access{margin-left:0}
     .resource-feed-card{padding:12px 16px}
     .resource-toolbar .feed-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
     .resource-toolbar .feed-filter{min-width:0}
@@ -1151,7 +1159,6 @@
             <button type="button" class="feed-filter" data-news-filter="cafe" aria-pressed="false">카페</button>
             <button type="button" class="feed-filter" data-news-filter="blog" aria-pressed="false">블로그</button>
           </div>
-          <input class="feed-search" id="newsSearch" type="search" aria-label="소식 제목 검색" placeholder="제목 검색">
         </div>
         <div class="news-cards" id="newsCards" aria-live="polite" tabindex="0" aria-label="소식 목록"><p class="feed-load-message">소식 불러오는 중...</p></div>
         <p class="news-scroll-hint" id="newsScrollHint" hidden>아래로 스크롤하면 이전 소식을 더 볼 수 있습니다 ↓</p>
@@ -1353,9 +1360,8 @@
     function updateResourceScroll(){limitHubScroll('resources','resourceCards','.resource-feed-card','resourceScrollHint')}
     function renderPosts(){
       const area=$('newsCards');area.replaceChildren();
-      const query=($('newsSearch')?.value||'').trim().toLocaleLowerCase('ko-KR');
-      const items=allPosts().filter(p=>(newsFilter==='all'||p.kind===newsFilter)&&(!query||[p.title,p.summary,p.source||''].some(v=>String(v).toLocaleLowerCase('ko-KR').includes(query))));
-      if(!items.length){area.append(el('p','feed-load-message',query||newsFilter!=='all'?'일치하는 소식이 없습니다.':'등록된 소식이 없습니다.'));updateNewsScroll();return;}
+      const items=allPosts().filter(p=>newsFilter==='all'||p.kind===newsFilter);
+      if(!items.length){area.append(el('p','feed-load-message',newsFilter!=='all'?'일치하는 소식이 없습니다.':'등록된 소식이 없습니다.'));updateNewsScroll();return;}
       const labels={news:'기사·분석',blog:'블로그',cafe:'카페',local:'내 글'};
       for(const p of items){
         const external=p.kind!=='local'&&isSafeSourceUrl(p.url);
@@ -1366,9 +1372,7 @@
         meta.append(el('span','news-kind',labels[p.kind]||'소식'),el('span','',p.date||'날짜 미확인'));
         if(p.source)meta.append(el('span','',p.source));
         card.append(meta,el('h3','',p.title),el('p','',p.summary));
-        const hint=el('span','news-link-hint',external?'원문 보기 ↗':'내 글 읽기 ↗');
-        card.append(hint);
-        if(p.restricted)card.append(el('span','news-access','로그인 필요 가능'));
+        if(p.restricted)meta.append(el('span','news-access','로그인 필요 가능'));
         area.append(card);
       }
       updateNewsScroll();
@@ -1452,7 +1456,6 @@
       document.querySelectorAll('[data-news-filter]').forEach(x=>{const yes=x===btn;x.classList.toggle('active',yes);x.setAttribute('aria-pressed',String(yes));});
       renderPosts();
     }));
-    $('newsSearch').addEventListener('input',renderPosts);
     function updateAllHubScrolls(){updateNewsScroll();updateResourceScroll()}
     window.addEventListener('resize',updateAllHubScrolls);
     if(document.fonts?.ready)document.fonts.ready.then(updateAllHubScrolls);
