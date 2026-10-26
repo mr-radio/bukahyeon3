@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-10-23",
+  "checkedAt": "2026-10-26",
   "mode": "수동 확인 목록",
   "items": [
+    {
+      "id": "n013",
+      "kind": "news",
+      "date": "2026-10-24",
+      "title": "서울 정비사업 이주·멸실 전망과 전월세 시장 영향",
+      "source": "뉴스퀘스트 · 보도",
+      "summary": "북아현3구역이 멸실 전망 분석에 포함됐으며, 실제 이주 일정은 확정된 것이 아닙니다.",
+      "url": "https://www.newsquest.co.kr/news/articleView.html?idxno=303349"
+    },
     {
       "id": "n011",
       "kind": "news",
