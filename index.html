@@ -971,6 +971,12 @@
     .notice-list-item small{display:block;margin-top:5px;color:#7a8b91;font-size:11px}
     .notice-list-item .notice-list-arrow{font-size:22px;color:#aa835c}
     .notice-empty{padding:29px 16px;margin:0;border:1px solid #e0e8e8;border-radius:10px;background:#fff;color:#7a8990;text-align:center;font-size:13px}
+    .notice-list[hidden],.notice-detail[hidden]{display:none}
+    .notice-detail{padding:21px 23px;border:1px solid #dce7e7;border-radius:12px;background:#fff}
+    .notice-detail-back{padding:5px 0;border:0;background:none;color:#45707d;font-size:12px;font-weight:850}
+    .notice-detail h3{margin:13px 0 5px;font-size:22px;letter-spacing:-.6px;color:#18384e}
+    .notice-detail-origin{margin:0 0 19px;color:#7c8d93;font-size:11px}
+    .notice-detail-body{padding-top:17px;border-top:1px solid #e7eded;white-space:pre-wrap;overflow-wrap:anywhere;color:#425966;font-size:14px;line-height:1.95}
     .notice-overlay[hidden]{display:none}
     .notice-overlay{position:fixed;inset:0;z-index:110;overflow-y:auto;background:rgba(11,31,43,.66);padding:24px;display:grid;place-items:center}
     body.notice-open{overflow:hidden}
@@ -987,9 +993,9 @@
     .notice-card-close{flex:none;display:grid;place-items:center;width:32px;height:32px;border:1px solid #e1e8e7;border-radius:8px;background:#fff;color:#4b6874;font-size:21px;line-height:1}
     .notice-card-body{flex:1;min-height:64px;overflow-y:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:17px 19px 21px;color:#415966;font-size:14px;line-height:1.8}
     .notice-card-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 17px;border-top:1px solid #e5ebea;background:#fff}
-    .notice-card-actions button{border:0;padding:5px 2px;background:transparent;color:#4c6d79;font-size:11px;font-weight:800}
-    .notice-card-actions button:last-child{color:#987145}
-    .notice-card :is(button):focus-visible{outline:2px solid #d49758;outline-offset:2px}
+    .notice-card-actions :is(button,a){border:0;padding:5px 2px;background:transparent;color:#4c6d79;font-size:11px;font-weight:800}
+    .notice-card-actions :is(button,a):last-child{color:#987145}
+    .notice-card :is(button,a):focus-visible{outline:2px solid #d49758;outline-offset:2px}
     @media(max-width:680px){
       .resource-hub .hub-tabs{max-width:none}
       .notice-overlay{display:block;padding:20px 12px 32px}
@@ -1002,6 +1008,9 @@
       .notice-card h3{font-size:17px}
       .notice-card-body{padding:11px 15px 13px;font-size:13px}
       .notice-card-actions{padding:7px 13px}
+      .notice-detail{padding:15px}
+      .notice-detail h3{font-size:19px}
+      .notice-detail-body{font-size:13px}
     }
   </style>
 </head>
@@ -1319,6 +1328,7 @@
       <div class="hub-panel" id="info" role="tabpanel" aria-labelledby="hubTabInfo" hidden>
         <div class="info-subtabs" aria-label="정보 분류"><button class="info-subtab active" type="button" aria-current="page">공지</button></div>
         <div class="notice-list" id="noticeList" aria-live="polite"><p class="notice-empty">공지를 불러오는 중...</p></div>
+        <article class="notice-detail" id="noticeDetail" aria-live="polite" hidden></article>
       </div>
       <div class="hub-panel" id="resources" role="tabpanel" aria-labelledby="hubTabResources" hidden>
         <div class="feed-toolbar resource-toolbar">
@@ -1454,7 +1464,7 @@
     function el(tag,className,text){const n=document.createElement(tag);if(className)n.className=className;if(text!==undefined)n.textContent=text;return n}
     function isSafeSourceUrl(value){try{const u=new URL(value);return (u.protocol==='https:'||u.protocol==='http:')&&!!u.hostname}catch{return false}}
     // Notices are public only after they are added to notice-feed.json on GitHub.
-    // {id, date, title, body, popup:true} displays in both the info list and the entry popup.
+    // {id, date, title, body, popup:true, popupSummary} supports a short popup and a full linked notice.
     let notices=[];
     const NOTICE_HIDE_KEY='bukahyeon3_notice_hidden_today_v1';
     let noticeReturnFocus=null;
@@ -1500,21 +1510,16 @@
         close.type='button';close.setAttribute('aria-label',p.title+' 닫기');
         close.addEventListener('click',()=>removeNoticeCard(card));
         head.append(titleBlock,close);
-        const body=el('div','notice-card-body',p.body);
+        const body=el('div','notice-card-body',!manual&&typeof p.popupSummary==='string'&&p.popupSummary.trim()?p.popupSummary:p.body);
         const actions=el('div','notice-card-actions');
         const today=el('button','','오늘 하루 보지 않기');today.type='button';
         today.addEventListener('click',()=>{suppressNoticeToday(p.id);removeNoticeCard(card)});
-        const all=el('button','','공지 전체보기 ↗');all.type='button';
-        all.addEventListener('click',()=>{
-          closeNoticeOverlay();
-          selectHub('info');
-          history.replaceState(null,'','#info');
-          $('news-hub').scrollIntoView({behavior:'smooth',block:'start'});
-        });
+        const all=el('a','','전문 보기 ↗');all.href='#notice-'+encodeURIComponent(p.id);
+        all.addEventListener('click',event=>{event.preventDefault();openNoticeDetail(p)});
         actions.append(today,all);
         card.append(head,body,actions);
         card.addEventListener('pointerdown',event=>{
-          if(!(event.target instanceof HTMLButtonElement))card.focus();
+          if(!(event.target instanceof HTMLButtonElement)&&!(event.target instanceof HTMLAnchorElement))card.focus();
           stack.querySelectorAll('.notice-card').forEach(c=>c.style.zIndex='1');card.style.zIndex='5';
         });
         stack.append(card);
@@ -1527,12 +1532,33 @@
       const list=$('noticeList');list.replaceChildren();
       if(!notices.length){list.append(el('p','notice-empty','등록된 공지가 없습니다.'));return}
       notices.forEach(p=>{
-        const button=el('button','notice-list-item');button.type='button';
+        const button=el('a','notice-list-item');button.href='#notice-'+encodeURIComponent(p.id);
         const details=el('span');details.append(el('strong','',p.title),el('small','',p.date||'공지사항'));
         button.append(details,el('span','notice-list-arrow','›'));
-        button.addEventListener('click',()=>showNoticePopups([p],true));
+        button.addEventListener('click',event=>{event.preventDefault();openNoticeDetail(p)});
         list.append(button);
       });
+    }
+    function closeNoticeDetail(updateHash=false){
+      $('noticeDetail').hidden=true;
+      $('noticeDetail').replaceChildren();
+      $('noticeList').hidden=false;
+      if(updateHash)history.replaceState(null,'','#info');
+    }
+    function openNoticeDetail(p,updateHash=true){
+      closeNoticeOverlay();
+      selectHub('info');
+      const detail=$('noticeDetail');detail.replaceChildren();
+      const back=el('button','notice-detail-back','← 공지 목록');back.type='button';
+      back.addEventListener('click',()=>{closeNoticeDetail(true);$('noticeList').querySelector('a')?.focus()});
+      const title=el('h3','',p.title);title.tabIndex=-1;
+      const source=el('p','notice-detail-origin',p.source||'공지사항');
+      if(p.date)source.textContent+=' · '+p.date;
+      detail.append(back,title,source,el('div','notice-detail-body',p.body));
+      $('noticeList').hidden=true;detail.hidden=false;
+      if(updateHash)history.replaceState(null,'','#notice-'+encodeURIComponent(p.id));
+      $('news-hub').scrollIntoView({behavior:'smooth',block:'start'});
+      title.focus({preventScroll:true});
     }
     async function loadNotices(){
       try{
@@ -1545,8 +1571,9 @@
           ids.add(p.id);return true;
         }).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
         renderNotices();
+        showHashHub();
         const hidden=new Set(noticeHiddenToday());
-        showNoticePopups(notices.filter(p=>p.popup===true&&!hidden.has(p.id)).slice(0,3));
+        if(!location.hash.startsWith('#notice-'))showNoticePopups(notices.filter(p=>p.popup===true&&!hidden.has(p.id)).slice(0,3));
       }catch{
         $('noticeList').replaceChildren(el('p','notice-empty','공지 목록을 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.'));
       }
@@ -1750,7 +1777,17 @@
         if(next!==-1){event.preventDefault();selectHub(hubTabs[next].dataset.hub,true)}
       });
     });
-    function showHashHub(){const key=location.hash.slice(1);if(['news','info','resources'].includes(key))selectHub(key);}
+    function showHashHub(){
+      const key=decodeURIComponent(location.hash.slice(1));
+      if(key.startsWith('notice-')){
+        selectHub('info');
+        const item=notices.find(p=>'notice-'+p.id===key);
+        if(item)openNoticeDetail(item,false);
+      }else if(['news','info','resources'].includes(key)){
+        closeNoticeDetail(false);
+        selectHub(key);
+      }
+    }
     window.addEventListener('hashchange',showHashHub);
     showHashHub();
     loadNotices();
