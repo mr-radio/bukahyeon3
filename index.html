@@ -975,8 +975,8 @@
     .notice-overlay{position:fixed;inset:0;z-index:110;overflow-y:auto;background:rgba(11,31,43,.66);padding:24px;display:grid;place-items:center}
     body.notice-open{overflow:hidden}
     .notice-stack{display:flex;align-items:center;justify-content:center;max-width:100%;padding:24px 0 38px;margin:auto}
-    .notice-card{position:relative;flex:none;width:min(348px,calc((100vw - 76px + 88px)/3));min-height:290px;max-height:min(74vh,610px);display:flex;flex-direction:column;overflow:hidden;border:1px solid #d8e3e3;border-radius:15px;background:#fff;box-shadow:0 24px 58px #071d3040;outline:none}
-    .notice-card+.notice-card{margin-left:-44px}
+    .notice-card{position:relative;flex:none;width:min(348px,calc((100vw - 76px + 40px)/3));min-height:290px;max-height:min(74vh,610px);display:flex;flex-direction:column;overflow:hidden;border:1px solid #d8e3e3;border-radius:15px;background:#fff;box-shadow:0 24px 58px #071d3040;outline:none}
+    .notice-card+.notice-card{margin-left:-20px}
     .notice-card:nth-child(2){transform:translateY(19px)}
     .notice-card:nth-child(3){transform:translateY(38px)}
     .notice-card:focus-within{z-index:10!important}
@@ -995,7 +995,7 @@
       .notice-overlay{display:block;padding:20px 12px 32px}
       .notice-stack{display:flex;flex-direction:column;align-items:center;padding:0 0 20px}
       .notice-card{width:min(430px,calc(100vw - 40px));min-height:215px;max-height:55vh}
-      .notice-card+.notice-card{margin-left:0;margin-top:-12px}
+      .notice-card+.notice-card{margin-left:0;margin-top:-6px}
       .notice-card:nth-child(2){transform:translateX(5px)}
       .notice-card:nth-child(3){transform:translateX(-5px)}
       .notice-card-head{padding:12px 14px 9px}
