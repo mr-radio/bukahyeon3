@@ -1505,7 +1505,7 @@
         const head=el('div','notice-card-head');
         const titleBlock=el('div');
         titleBlock.append(el('span','notice-card-label','NOTICE · 공지사항'),el('h3','',p.title));
-        if(p.date){const date=el('time','',p.date);date.dateTime=p.date;titleBlock.append(date)}
+        if(p.date){const date=el('time','','게시일 '+p.date.replace(/-/g,'.'));date.dateTime=p.date;titleBlock.append(date)}
         const close=el('button','notice-card-close','×');
         close.type='button';close.setAttribute('aria-label',p.title+' 닫기');
         close.addEventListener('click',()=>removeNoticeCard(card));
@@ -1533,7 +1533,7 @@
       if(!notices.length){list.append(el('p','notice-empty','등록된 공지가 없습니다.'));return}
       notices.forEach(p=>{
         const button=el('a','notice-list-item');button.href='#notice-'+encodeURIComponent(p.id);
-        const details=el('span');details.append(el('strong','',p.title),el('small','',p.date||'공지사항'));
+        const details=el('span');details.append(el('strong','',p.title),el('small','',p.date?'게시일 '+p.date.replace(/-/g,'.'):'공지사항'));
         button.append(details,el('span','notice-list-arrow','›'));
         button.addEventListener('click',event=>{event.preventDefault();openNoticeDetail(p)});
         list.append(button);
@@ -1553,7 +1553,7 @@
       back.addEventListener('click',()=>{closeNoticeDetail(true);$('noticeList').querySelector('a')?.focus()});
       const title=el('h3','',p.title);title.tabIndex=-1;
       const source=el('p','notice-detail-origin',p.source||'공지사항');
-      if(p.date)source.textContent+=' · '+p.date;
+      if(p.date)source.textContent+=' · 게시일 '+p.date.replace(/-/g,'.');
       detail.append(back,title,source,el('div','notice-detail-body',p.body));
       $('noticeList').hidden=true;detail.hidden=false;
       if(updateHash)history.replaceState(null,'','#notice-'+encodeURIComponent(p.id));
