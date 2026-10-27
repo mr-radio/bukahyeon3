@@ -901,6 +901,51 @@
       .site-header .share-button span:last-child{display:none}
     }
     @media(max-width:360px){.site-header .brand-mark{display:none}}
+    /* Landing reasons: compact three-card value proposition below the aerial. */
+    .reasons-section{padding:18px 0 12px;background:var(--paper)}
+    .reasons-heading{text-align:center;margin-bottom:13px}
+    .reasons-heading .kicker{margin-bottom:3px;font-size:10px;letter-spacing:1.65px}
+    .reasons-heading h2{font-size:clamp(21px,2.45vw,28px);line-height:1.3;letter-spacing:-.9px;margin:0;color:var(--navy)}
+    .reasons-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+    .reason-card{display:flex;flex-direction:column;min-width:0;min-height:192px;padding:15px 15px 13px;border:1px solid #e1e8e9;border-radius:13px;background:#fff;box-shadow:0 4px 14px #18324708}
+    .reason-index{color:#b68a54;font-size:10px;font-weight:900;letter-spacing:1px}
+    .reason-card h3{margin:4px 0 4px;font-size:clamp(16px,1.72vw,20px);line-height:1.32;letter-spacing:-.55px;color:var(--navy)}
+    .reason-lead{margin:0 0 11px;font-size:11px;color:#61717c;line-height:1.45}
+    .reason-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:auto;padding:10px 3px 9px;background:#f0f4f7;border-radius:8px;text-align:center}
+    .reason-metric{min-width:0}
+    .reason-metric+.reason-metric{border-left:1px solid #d7e0e6}
+    .reason-metric-label{display:block;font-size:10px;color:#657684;white-space:nowrap}
+    .reason-metric strong{display:block;margin-top:4px;font-size:clamp(16px,1.8vw,21px);line-height:1.2;letter-spacing:-.6px;color:#1d456e;white-space:nowrap}
+    .reason-metric strong small{font-size:9px;letter-spacing:-.2px;color:#8e7044}
+    .reason-scale{margin-top:auto}
+    .reason-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+    .reason-highlights span{min-width:0;padding:7px 2px;border-radius:6px;background:#264862;color:#f6d9ab;font-size:10px;font-weight:900;line-height:1.25;text-align:center;white-space:nowrap}
+    .reason-scale-total{display:flex;align-items:baseline;justify-content:center;gap:6px;margin-top:7px;padding:5px 4px;border-radius:7px;background:#f0f4f7;color:#234b6b}
+    .reason-scale-total strong{font-size:21px;line-height:1.25;letter-spacing:-.8px}
+    .reason-scale-total span{font-size:10px;color:#73848e}
+    .reason-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:auto}
+    .reason-values>div{padding:8px 4px 7px;text-align:center;border-radius:8px;background:#f0f4f7}
+    .reason-values>div:last-child{background:#faf4eb}
+    .reason-values span{display:block;font-size:10px;color:#657684}
+    .reason-values strong{display:block;margin-top:3px;font-size:clamp(18px,2vw,24px);line-height:1.2;letter-spacing:-.7px;color:#1d456e}
+    .reason-values>div:last-child strong{color:#9b7140}
+    .reasons-note{margin:10px 1px 0;font-size:10px;line-height:1.55;color:#829198}
+    @media(max-width:680px){
+      .reasons-section{padding:12px 0 9px}
+      .reasons-heading{margin-bottom:10px}
+      .reasons-heading h2{font-size:21px}
+      .reasons-grid{grid-template-columns:1fr;gap:8px}
+      .reason-card{min-height:0;padding:12px 14px}
+      .reason-card h3{font-size:18px;margin:2px 0 3px}
+      .reason-lead{margin-bottom:9px;font-size:11px}
+      .reason-metrics{padding:8px 3px}
+      .reason-metric strong{font-size:20px}
+      .reason-scale-total{padding:4px}
+      .reason-highlights span{padding:6px 2px;font-size:11px}
+      .reason-values{gap:6px}
+      .reason-values strong{font-size:22px}
+      .reasons-note{font-size:9px;margin-top:8px}
+    }
   </style>
 </head>
 <body>
@@ -927,6 +972,45 @@
         <p class="hero-aerial-note">제공 이미지 · 실제 설계는 변경될 수 있습니다</p>
       </div>
     </section>
+    <section class="reasons-section" aria-labelledby="reasonsTitle">
+      <div class="wrap">
+        <div class="reasons-heading"><span class="kicker">THREE KEY VALUES</span><h2 id="reasonsTitle">북아현3구역을 주목하는 3가지 이유</h2></div>
+        <div class="reasons-grid">
+          <article class="reason-card">
+            <span class="reason-index">01 · LOCATION</span>
+            <h3>서울의 심장, 도심 입지</h3>
+            <p class="reason-lead">대한민국 업무·문화의 중심을 가까이 누리는 입지</p>
+            <div class="reason-metrics" aria-label="업무지구별 참고 이동시간">
+              <div class="reason-metric"><span class="reason-metric-label">CBD</span><strong>약 5분</strong></div>
+              <div class="reason-metric"><span class="reason-metric-label">YBD</span><strong>약 10분</strong></div>
+              <div class="reason-metric"><span class="reason-metric-label">삼성역 · GTX</span><strong>5분 <small>예상*</small></strong></div>
+            </div>
+          </article>
+          <article class="reason-card">
+            <span class="reason-index">02 · SCALE</span>
+            <h3>압도적 규모, 주거의 기준</h3>
+            <p class="reason-lead">강북 대표 랜드마크를 목표로 하는 주거 계획</p>
+            <div class="reason-scale">
+              <div class="reason-highlights" aria-label="단지 규모와 고급화, 커뮤니티 특화">
+                <span>초대형 단지</span><span>고급화 설계</span><span>특화 커뮤니티</span>
+              </div>
+              <div class="reason-scale-total"><strong>5,310세대</strong><span>변경안 추진</span></div>
+            </div>
+          </article>
+          <article class="reason-card">
+            <span class="reason-index">03 · VALUE</span>
+            <h3>최고의 사업가치에 도전</h3>
+            <p class="reason-lead">일반분양 수익 극대화로 더 큰 미래가치를 향해</p>
+            <div class="reason-values" aria-label="사업성 목표를 설명하기 위한 가정 예시">
+              <div><span>미래 신축가 가정</span><strong>30억</strong></div>
+              <div><span>안전마진 목표 가정</span><strong>10억+</strong></div>
+            </div>
+          </article>
+        </div>
+        <p class="reasons-note">※ 이동시간은 도보·대기·환승을 제외한 참고 또는 예상치이며, 삼성역 5분은 공식 검증 전 개인 예상입니다. 5,310세대는 변경 추진안입니다. 30억·10억은 미래 가격·총매수가를 가정한 목표 시나리오로, 수익을 보장하지 않으며 세금·이자 등 비용에 따라 달라집니다.</p>
+      </div>
+    </section>
+
     <section class="headline-strip" aria-label="최근 소식 5개">
       <div class="wrap">
         <div class="headline-strip-inner">
