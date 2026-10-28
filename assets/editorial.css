@@ -657,3 +657,121 @@
  .editorial-compact .market-projects-secondary .market-premium-card .market-premium-inline .market-premium-average strong{font-size:15px}
  .editorial-compact .market-projects-secondary .market-premium-inline .market-premium-average{gap:3px}
 }
+
+/* Visual hierarchy: editorial titles, image chapters, and compact reference tools. */
+.editorial-polish{--image-paper:#fff;--tool-paper:#eeede8}
+.editorial-polish main>.section+.section>.wrap{border-top:0}
+.editorial-polish .section .section-head h2{font-family:inherit;font-size:25px;font-weight:650;letter-spacing:-.6px;line-height:1.5;gap:0}
+.editorial-polish .section .section-head h2::before,.editorial-polish .compact-heading h1::before,.editorial-polish .megacity-heading h3::before{display:none}
+.editorial-polish .section .section-head .section-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.editorial-polish .title-phrase{display:inline-block;white-space:nowrap}
+.editorial-polish .compact-heading h1{font-size:29px;font-weight:600;line-height:1.55;letter-spacing:-.8px;text-wrap:balance}
+.editorial-polish .compact-overview .fact-mini b{font-size:25px;font-weight:500;letter-spacing:-.5px}
+.editorial-polish .compact-overview .fact-mini span{line-height:1.65}
+.editorial-polish .hero-aerial-button::after{inset:48% 0 0;background:linear-gradient(0deg,rgba(10,21,15,.82),rgba(10,21,15,.38) 55%,transparent)}
+.editorial-polish .hero-aerial-button>img{object-position:center 47%}
+.editorial-polish .hero-aerial-caption{padding:20px 25px;text-shadow:0 1px 4px #0006}
+.editorial-polish .hero-aerial-caption strong{font-size:27px;line-height:1.45;letter-spacing:-.5px}
+.editorial-polish .hero-aerial-caption small{font-weight:400;color:#f5f3ed;letter-spacing:0}
+.editorial-polish .hero-aerial-expand{font-weight:600;background:#f7f5efd9;min-height:32px;padding:6px 9px}
+.editorial-polish .reasons-section{padding:30px 0}
+.editorial-polish .reasons-heading{max-width:680px;margin-bottom:22px}
+.editorial-polish .reasons-heading h2{font-size:29px;line-height:1.6;letter-spacing:-.7px;text-wrap:balance}
+.editorial-polish .reason-card h3{font-family:inherit;font-size:19px;font-weight:650;letter-spacing:-.4px;line-height:1.55;margin:7px 0}
+.editorial-polish .reason-index{font-size:10px;letter-spacing:.5px;font-weight:600}
+.editorial-polish .reason-lead{font-size:13px;font-weight:400;line-height:1.75}
+.editorial-polish .reason-metric strong,.editorial-polish .reason-scale-total strong,.editorial-polish .reason-values strong{font-size:23px;font-weight:500;letter-spacing:-.5px}
+.editorial-polish .reason-highlights span{border:0;border-bottom:1px solid var(--line);padding:7px 0;font-weight:500}
+.editorial-polish .reason-scale-total{border-top:0}
+.editorial-polish .reasons-note{font-size:11px;line-height:1.8}
+.editorial-polish #progress .compact-progress-head h2{font-family:inherit;font-size:21px;font-weight:650;letter-spacing:-.4px}
+.editorial-polish #transport,.editorial-polish #plans,.editorial-polish #community,.editorial-polish .megacity-section{background:var(--image-paper)}
+.editorial-polish #transport{margin-top:14px;padding-top:32px}
+.editorial-polish #plans>.wrap,.editorial-polish #community>.wrap,.editorial-polish .megacity-section>.wrap{padding-top:12px}
+.editorial-polish .transport-visual-caption strong{font-size:13px;font-weight:600}
+.editorial-polish .transport-visual-caption{border-color:#e5e1d9}
+.editorial-polish .commute-map-tile{border-color:#e5e1d9}
+.editorial-polish .commute-map-tile .commute-map-head{font-weight:600}
+.editorial-polish .commute-times-five .commute-time-row .mins{font-weight:600}
+.editorial-polish .plan-text h3{font-size:17px;font-weight:600;line-height:1.5}
+.editorial-polish .plan-text p{font-size:12px}
+.editorial-polish .floorplan-typebar button{font-weight:500}
+.editorial-polish .floorplan-typebar button.active{font-weight:700}
+.editorial-polish .community-slide-tab strong{font-weight:600}
+.editorial-polish .community-slide-tab small{font-weight:400}
+.editorial-polish .community-slide-text strong{font-size:16px;font-weight:600}
+.editorial-polish .megacity-heading h3{font-family:inherit;font-size:25px;font-weight:650;letter-spacing:-.6px}
+.editorial-polish .megacity-gallery-heading strong{font-weight:600}
+.editorial-polish .market-projects-primary .market-premium-heading h3{font-family:inherit;font-size:23px;font-weight:600}
+.editorial-polish .market-projects-primary .market-premium-card{border-top:0;padding-top:6px}
+.editorial-polish .market-projects-primary .market-premium-card .market-premium-inline .market-premium-range{font-weight:500}
+.editorial-polish .market-projects-primary .market-premium-card .market-premium-inline .market-premium-average strong{font-weight:600}
+.editorial-polish .market-subhead{font-size:17px;font-weight:600;line-height:1.5}
+.editorial-polish .market-prices .price-main strong{font-weight:500}
+.editorial-polish .margin-calc{background:var(--tool-paper);border-top:2px solid #b5afa4}
+.editorial-polish .margin-calc h3{font-family:inherit;font-size:22px;font-weight:650;letter-spacing:-.5px}
+.editorial-polish .margin-step .margin-field input,.editorial-polish .margin-step .margin-field select{background:#fffefa}
+.editorial-polish .margin-step #marginBuy,.editorial-polish .margin-equation-cell>output{background:#f7f6f0}
+.editorial-polish .margin-result{background:#fffefa}
+.editorial-polish #news-hub .section-head h2{font-size:25px}
+.editorial-polish .hub-tab{font-size:15px;font-weight:500}
+.editorial-polish #news .news-card h3{font-weight:600}
+.editorial-polish #insights{border-top:1px solid var(--line);margin-top:8px}
+.editorial-polish #insights .section-head h2{font-family:var(--serif);font-size:28px;font-weight:600;line-height:1.65;text-wrap:balance}
+.editorial-polish .insight-title{font-family:inherit;font-size:18px;font-weight:600;line-height:1.65;letter-spacing:-.35px}
+.editorial-polish .insight-summary{font-size:12px;line-height:1.75}
+.editorial-polish .insight-meta{font-size:11px}
+.editorial-polish .insight-body .insight-lead{font-weight:600}
+@media(max-width:680px){
+ .editorial-polish .section .section-head h2,.editorial-polish #news-hub .section-head h2{font-size:22px;line-height:1.5;letter-spacing:-.5px}
+ .editorial-polish .section .section-head .section-desc{font-size:12px;line-height:1.65;margin-top:3px}
+ .editorial-polish .section-head{margin-bottom:13px}
+ .editorial-polish .compact-heading h1{font-size:23px;line-height:1.6;letter-spacing:-.7px}
+ .editorial-polish .compact-heading p{font-size:12px;line-height:1.65}
+ .editorial-polish .compact-overview .fact-mini b{font-size:22px;font-weight:500;line-height:1.4}
+ .editorial-polish .hero-aerial-button::after{inset:52% 0 0;background:linear-gradient(0deg,rgba(10,21,15,.84),rgba(10,21,15,.36) 62%,transparent)}
+ .editorial-polish .hero-aerial-button>img{object-position:center 47%}
+ .editorial-polish .hero-aerial-caption{padding:12px 14px}
+ .editorial-polish .hero-aerial-caption strong{font-size:clamp(16px,4.6vw,20px);line-height:1.42;letter-spacing:-.35px}
+ .editorial-polish .hero-aerial-caption small{font-size:clamp(9px,2.6vw,11px);line-height:1.6;margin-top:5px}
+ .editorial-polish .hero-aerial-expand{font-size:10px;top:9px;right:9px;padding:5px 8px;min-height:30px}
+ .editorial-polish .reasons-section{padding:23px 0}
+ .editorial-polish .reasons-heading{margin-bottom:19px}
+ .editorial-polish .reasons-heading h2{font-size:24px;line-height:1.55;letter-spacing:-.5px}
+ .editorial-polish .reasons-grid{gap:17px}
+ .editorial-polish .reason-card+.reason-card{padding-top:17px}
+ .editorial-polish .reason-card h3{font-size:18px;font-weight:650;margin:5px 0 7px}
+ .editorial-polish .reason-lead{font-size:12px;line-height:1.7;margin-bottom:11px}
+ .editorial-polish .reason-metric strong,.editorial-polish .reason-scale-total strong{font-size:22px;font-weight:500}
+ .editorial-polish .reason-values strong{font-size:22px;font-weight:500}
+ .editorial-polish .reason-metric-label,.editorial-polish .reason-values span{font-size:11px}
+ .editorial-polish .reasons-note{font-size:10px;line-height:1.8;margin-top:13px}
+ .editorial-polish #progress .compact-progress-head h2{font-size:18px;line-height:1.5}
+ .editorial-polish #transport{margin-top:9px;padding-top:23px}
+ .editorial-polish #transport>.wrap{padding-top:0}
+ .editorial-polish #plans>.wrap,.editorial-polish #community>.wrap,.editorial-polish .megacity-section>.wrap{padding-top:8px}
+ .editorial-polish #transport,.editorial-polish #plans,.editorial-polish #community,.editorial-polish .megacity-section{padding-bottom:21px}
+ .editorial-polish .transport-visual-caption strong{font-size:13px}
+ .editorial-polish .transport-visual-caption>span{font-size:11px}
+ .editorial-polish .plan-text h3{font-size:16px}
+ .editorial-polish .plan-text p{font-size:12px;line-height:1.7}
+ .editorial-polish .community-slide-text strong{font-size:15px}
+ .editorial-polish .megacity-heading h3{font-size:22px;line-height:1.5}
+ .editorial-polish .market-projects-primary .market-premium-heading h3{font-size:20px}
+ .editorial-polish .market-projects-primary .market-premium-card .market-premium-inline .market-premium-range{font-size:20px}
+ .editorial-polish .market-projects-primary .market-premium-card .market-premium-inline .market-premium-average strong{font-size:19px}
+ .editorial-polish .market-subhead{font-size:15px}
+ .editorial-polish .margin-calc h3{font-size:19px;line-height:1.5}
+ .editorial-polish #insights .section-head h2{font-size:24px;line-height:1.6;letter-spacing:-.5px}
+ .editorial-polish .insight-title{font-size:16px;line-height:1.65}
+ .editorial-polish .insight-card summary{padding-top:17px;padding-bottom:17px}
+ .editorial-polish .insight-card summary::after{top:23px}
+ .editorial-polish .insight-summary{font-size:12px;line-height:1.75;margin-top:7px}
+}
+@media(max-width:360px){
+ .editorial-polish .compact-heading h1{font-size:22px}
+ .editorial-polish .reasons-heading h2{font-size:23px}
+ .editorial-polish #insights .section-head h2{font-size:23px}
+ .editorial-polish .market-projects-primary .market-premium-card .market-premium-inline .market-premium-range{font-size:18px}
+ .editorial-polish .market-projects-primary .market-premium-card .market-premium-inline .market-premium-average strong{font-size:17px}
+}
