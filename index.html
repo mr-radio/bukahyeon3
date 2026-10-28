@@ -998,16 +998,21 @@
     .notice-card :is(button,a):focus-visible{outline:2px solid #d49758;outline-offset:2px}
     @media(max-width:680px){
       .resource-hub .hub-tabs{max-width:none}
-      .notice-overlay{display:block;padding:20px 12px 32px}
-      .notice-stack{display:flex;flex-direction:column;align-items:center;padding:0 0 20px}
-      .notice-card{width:min(430px,calc(100vw - 40px));min-height:215px;max-height:55vh}
-      .notice-card+.notice-card{margin-left:0;margin-top:-6px}
-      .notice-card:nth-child(2){transform:translateX(5px)}
-      .notice-card:nth-child(3){transform:translateX(-5px)}
-      .notice-card-head{padding:12px 14px 9px}
-      .notice-card h3{font-size:17px}
-      .notice-card-body{padding:11px 15px 13px;font-size:13px}
-      .notice-card-actions{padding:7px 13px}
+      .notice-overlay{display:grid;place-items:center;overflow-y:auto;padding:14px 12px}
+      .notice-stack{position:relative;display:block;width:min(100%,430px);height:clamp(390px,58vh,480px);padding:0;margin:auto}
+      .notice-card{position:absolute;width:clamp(195px,calc((100vw - 40px)*.67),260px);height:clamp(220px,31.6vh,275px);min-height:0;max-height:none;margin:0}
+      .notice-card+.notice-card{margin-left:0;margin-top:0}
+      .notice-card:nth-child(1){top:0;left:0;transform:rotate(-1.5deg)}
+      .notice-card:nth-child(2){top:clamp(68px,10vh,92px);left:50%;transform:translateX(-50%) rotate(.8deg)}
+      .notice-card:nth-child(3){top:clamp(136px,20vh,184px);right:0;transform:rotate(-1deg)}
+      .notice-card-head{padding:10px 10px 7px;gap:6px}
+      .notice-card-label{font-size:8px;letter-spacing:.6px}
+      .notice-card h3{margin:4px 0 2px;font-size:14px;line-height:1.3}
+      .notice-card time{font-size:9px}
+      .notice-card-close{width:27px;height:27px;font-size:18px}
+      .notice-card-body{min-height:0;padding:9px 11px 10px;font-size:11.5px;line-height:1.55}
+      .notice-card-actions{padding:7px 10px;gap:5px}
+      .notice-card-actions :is(button,a){font-size:10px}
       .notice-detail{padding:15px}
       .notice-detail h3{font-size:19px}
       .notice-detail-body{font-size:13px}
@@ -1526,7 +1531,13 @@
       });
       $('noticeOverlay').hidden=false;
       document.body.classList.add('notice-open');
-      stack.querySelector('.notice-card-close')?.focus();
+      if(window.matchMedia('(max-width:680px)').matches){
+        // Keep the cascade visible until a visitor taps or tabs into a card.
+        $('noticeOverlay').tabIndex=-1;
+        $('noticeOverlay').focus({preventScroll:true});
+      }else{
+        stack.querySelector('.notice-card-close')?.focus();
+      }
     }
     function renderNotices(){
       const list=$('noticeList');list.replaceChildren();
