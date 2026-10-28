@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-10-29",
   "mode": "수동 확인 목록",
   "items": [
+    {
+      "id": "n031",
+      "kind": "news",
+      "date": "2026-10-28",
+      "title": "서울 정비사업 이주 전망…북아현3구역 포함, 전월세 수급 우려",
+      "source": "월요신문 · 보도",
+      "summary": "서울시 제출자료를 바탕으로 2030년까지 정비사업 이주 예정 물량을 분석하며 북아현3구역도 언급했습니다. 실제 북3 이주 시기는 확정된 일정이 아닙니다.",
+      "url": "https://www.wolyo.co.kr/news/articleView.html?idxno=319722"
+    },
     {
       "id": "n027",
       "kind": "news",
