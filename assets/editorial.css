@@ -507,3 +507,153 @@
 
 
 
+
+/* Compact mobile edition: retain content while reducing control rows and spacing. */
+.editorial-compact .hero-aerial{padding:16px 0 0}
+.editorial-compact .hero-aerial-button{height:clamp(270px,34vw,420px);overflow:hidden;background:#26231f}
+.editorial-compact .hero-aerial-button>img{height:100%;aspect-ratio:auto}
+.editorial-compact .hero-aerial-button::after{display:block;inset:25% 0 0;background:linear-gradient(transparent,rgba(17,20,17,.78))}
+.editorial-compact .hero-aerial-caption{position:absolute;inset:auto 0 0;z-index:1;display:block;border:0;padding:22px 26px;color:#fff;text-shadow:0 1px 5px #0008}
+.editorial-compact .hero-aerial-caption strong{color:#fff;font-size:29px;line-height:1.5;font-weight:600}
+.editorial-compact .hero-aerial-caption strong span{display:block}
+.editorial-compact .hero-aerial-caption strong span+span::before{content:none}
+.editorial-compact .hero-aerial-caption small{display:block;max-width:none;color:#f3efe7;text-align:left;font-size:12px;line-height:1.6;margin:7px 0 0}
+.editorial-compact .hero-aerial-note{margin-top:6px}
+@media(max-width:680px){
+ .editorial-compact .section:not(.compact-overview):not(.compact-progress){padding:18px 0}
+ .editorial-compact main>.section+.section>.wrap{padding-top:17px}
+ .editorial-compact .section-head{margin-bottom:12px}
+ .editorial-compact .section .section-head h2{font-size:25px;line-height:1.45}
+ .editorial-compact .section .section-head .section-desc{margin-top:4px;font-size:12px}
+ .editorial-compact .hero-aerial{padding-top:10px}
+ .editorial-compact .hero-aerial-button{height:clamp(220px,60vw,260px)}
+ .editorial-compact .hero-aerial-button>img{height:100%;aspect-ratio:auto;object-position:center 51%}
+ .editorial-compact .hero-aerial-caption{padding:15px 14px}
+ .editorial-compact .hero-aerial-caption strong{font-size:clamp(17px,4.8vw,22px);line-height:1.5;letter-spacing:-.6px}
+ .editorial-compact .hero-aerial-caption strong span{white-space:nowrap}
+ .editorial-compact .hero-aerial-caption small{font-size:clamp(9px,2.6vw,11px);line-height:1.6;margin-top:5px;white-space:nowrap}
+ .editorial-compact .hero-aerial-note{font-size:10px;line-height:1.5;margin-top:5px}
+ .editorial-compact #about.compact-overview{padding-top:19px!important;padding-bottom:12px!important}
+ .editorial-compact .compact-heading{margin-bottom:12px}
+ .editorial-compact .compact-heading h1{font-size:24px}
+ .editorial-compact .compact-heading .status{margin-top:5px}
+ .editorial-compact .compact-overview .fact-mini{padding-top:10px;padding-bottom:10px}
+ .editorial-compact .compact-overview .fact-mini b{font-size:22px}
+ .editorial-compact .compact-overview .source-note{margin-top:8px}
+ .editorial-compact #progress.compact-progress{padding-top:8px!important;padding-bottom:12px!important}
+ .editorial-compact #progress .wrap{padding-top:16px}
+ .editorial-compact #progress .compact-progress-head{flex-wrap:nowrap;align-items:baseline;gap:8px;margin-bottom:12px}
+ .editorial-compact #progress .compact-progress-head h2{font-size:20px;white-space:nowrap}
+ .editorial-compact #progress .compact-current-badge{font-size:10px;line-height:1.4;gap:4px}
+ .editorial-compact #progress .compact-stages{grid-template-columns:repeat(8,minmax(0,1fr));column-gap:4px;row-gap:0;padding-top:5px}
+ .editorial-compact #progress .compact-stage{padding-top:10px}
+ .editorial-compact #progress .compact-stage b{font-size:11px;line-height:1.4;letter-spacing:-.5px}
+ .editorial-compact #progress .compact-stage.is-current small{font-size:10px;line-height:1.3}
+ .editorial-compact #progress .compact-progress-note{margin-top:10px;font-size:10px;line-height:1.5;gap:4px 10px}
+ .editorial-compact .transport-visual-pair{gap:14px;margin-bottom:16px}
+ .editorial-compact .transport-visual-caption{padding:8px 0}
+ .editorial-compact .commute-map-tile{padding:8px 0}
+ .editorial-compact .commute-map-tile .commute-map-head{padding-bottom:3px;font-size:12px}
+ .editorial-compact .commute-summary-all{padding-top:11px}
+ .editorial-compact .commute-summary-all>h3{margin-bottom:8px;font-size:14px}
+ .editorial-compact .commute-zone-labels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin-bottom:3px}
+ .editorial-compact .commute-zone-label{font-size:10px;line-height:1.4}
+ .editorial-compact .commute-times-five{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+ .editorial-compact .commute-times-five .commute-time-row{flex-direction:column;justify-content:flex-start;gap:5px;padding:8px 1px 6px;border:0;border-top:2px solid var(--line);text-align:center}
+ .editorial-compact .commute-times-five .commute-time-row .dest{font-size:clamp(9px,2.7vw,11px);letter-spacing:-.4px;white-space:nowrap}
+ .editorial-compact .commute-times-five .commute-time-row small{display:none}
+ .editorial-compact .commute-times-five .commute-time-row .mins{font-size:18px;line-height:1.4;letter-spacing:-.7px}
+ .editorial-compact .commute-times-five .commute-time-row .mins span{font-size:10px}
+ .editorial-compact .commute-times-five .commute-time-row .mins.planned{font-size:11px;line-height:2.3;letter-spacing:-.5px}
+ .editorial-compact .commute-map-links{margin-top:9px;gap:8px}
+ .editorial-compact .commute-map-links a{min-height:38px;font-size:12px}
+ .editorial-compact .commute-disclaimer{font-size:10px;line-height:1.6;margin-top:9px}
+ .editorial-compact .plans-section .plan-grid{gap:20px}
+ .editorial-compact .plan-text{padding-top:10px}
+ .editorial-compact .plan-text h3{font-size:17px}
+ .editorial-compact .plan-text p{font-size:12px}
+ .editorial-compact .plan-open{padding-top:4px;min-height:30px;font-size:12px}
+ .editorial-compact .floorplan-typebar{grid-template-columns:repeat(8,minmax(0,1fr));grid-template-rows:repeat(2,auto);gap:2px;padding:0 0 8px;margin-bottom:10px}
+ .editorial-compact .floorplan-typebar button{font-size:11px;min-height:34px;padding:5px 1px;letter-spacing:-.3px}
+ .editorial-compact .community-slide-tabs{grid-template-columns:repeat(8,minmax(0,1fr));gap:2px;padding-bottom:8px}
+ .editorial-compact .community-slide-tab{min-height:42px;padding:4px 0;gap:2px}
+ .editorial-compact .community-slide-tab :is(strong,small){font-size:11px;letter-spacing:-.4px}
+ .editorial-compact .community-slide-feature{margin-top:10px}
+ .editorial-compact .community-slide-caption{padding:10px 0}
+ .editorial-compact .community-slide-text strong{font-size:16px}
+ .editorial-compact .community-slide-text small,.editorial-compact .community-slide-counter{font-size:11px}
+ .editorial-compact .megacity-heading{margin-bottom:13px}
+ .editorial-compact .megacity-heading h3{font-size:24px}
+ .editorial-compact .megacity-gallery-heading{margin-top:14px;margin-bottom:8px;gap:7px}
+ .editorial-compact .megacity-gallery-heading strong{font-size:13px}
+ .editorial-compact .megacity-gallery-heading span{font-size:10px}
+ .editorial-compact .megacity-gallery{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+ .editorial-compact .megacity-shot span{font-size:10px;line-height:1.5;padding:5px 0;letter-spacing:-.5px}
+ .editorial-compact .megacity-caution{font-size:10px;line-height:1.6;margin-top:9px}
+ .editorial-compact .market-projects-primary .market-premium-card{padding:13px 0}
+ .editorial-compact .market-projects-primary .market-premium-heading h3{font-size:21px}
+ .editorial-compact .market-projects-primary .market-archived-premium{padding-top:8px}
+ .editorial-compact .market-projects-primary .market-premium-card .market-premium-inline{flex-wrap:nowrap;gap:8px;margin-top:5px}
+ .editorial-compact .market-projects-primary .market-premium-card .market-premium-inline .market-premium-range{flex:1 1 auto;font-size:21px;white-space:nowrap}
+ .editorial-compact .market-projects-primary .market-premium-card .market-premium-inline .market-premium-average{flex:0 0 auto;gap:5px}
+ .editorial-compact .market-projects-primary .market-premium-card .market-premium-inline .market-premium-average span{font-size:10px}
+ .editorial-compact .market-projects-primary .market-premium-card .market-premium-inline .market-premium-average strong{font-size:20px}
+ .editorial-compact .market-listing-link{min-height:36px;font-size:12px;margin-top:4px}
+ .editorial-compact .market-subhead{font-size:17px;margin:18px 0 11px}
+ .editorial-compact .market-projects-secondary .market-premium-card{padding:10px 0}
+ .editorial-compact .market-projects-secondary .market-premium-card .market-premium-inline{flex-wrap:nowrap;gap:6px}
+ .editorial-compact .market-projects-secondary .market-premium-card .market-premium-inline .market-premium-range{font-size:18px;white-space:nowrap}
+ .editorial-compact .market-projects-secondary .market-premium-card .market-premium-inline .market-premium-average{gap:4px}
+ .editorial-compact .market-projects-secondary .market-premium-card .market-premium-inline .market-premium-average strong{font-size:17px}
+ .editorial-compact .market-projects-secondary .market-premium-card .market-premium-inline .market-premium-average span{font-size:10px}
+ .editorial-compact .market-prices{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+ .editorial-compact .market-prices .price-card{padding:10px 0}
+ .editorial-compact .market-prices .price-main{gap:5px;align-items:baseline}
+ .editorial-compact .market-prices .price-main h4{font-size:12px;line-height:1.4;letter-spacing:-.6px}
+ .editorial-compact .market-prices .price-main strong{font-size:18px;letter-spacing:-.6px}
+ .editorial-compact .market-prices .price-main strong small{font-size:10px}
+ .editorial-compact .market-prices .price-card p{font-size:10px;line-height:1.5;margin-top:5px}
+ .editorial-compact .margin-calc{padding:12px;margin-top:18px}
+ .editorial-compact .margin-calc-head{margin-bottom:8px}
+ .editorial-compact .margin-calc h3{font-size:22px;line-height:1.5}
+ .editorial-compact .margin-unit{font-size:11px}
+ .editorial-compact .margin-step{padding:10px 0}
+ .editorial-compact .margin-step-title{margin-bottom:7px;gap:4px}
+ .editorial-compact .margin-step-title h4{font-size:12px;line-height:1.4}
+ .editorial-compact .margin-step-num{font-size:14px;width:17px}
+ .editorial-compact .margin-step .margin-field{font-size:11px;gap:3px}
+ .editorial-compact .margin-step .margin-field input,.editorial-compact .margin-step .margin-field select{font-size:16px;min-height:40px;padding:6px;border-radius:0}
+ .editorial-compact .margin-step .margin-input-row-three{gap:6px}
+ .editorial-compact .margin-step .margin-input-row-two{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .editorial-compact .margin-step-summary{font-size:11px;line-height:1.5;padding-top:5px}
+ .editorial-compact .margin-formula-group{padding:1px 3px}
+ .editorial-compact .margin-formula-group strong{font-size:13px}
+ .editorial-compact .margin-formula-group small{font-size:9px}
+ .editorial-compact .margin-equation-grid{grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.12fr);gap:9px}
+ .editorial-compact .margin-equation-cell{gap:3px}
+ .editorial-compact .margin-equation-cell>span{font-size:10px;min-height:25px;line-height:1.3;letter-spacing:-.5px}
+ .editorial-compact .margin-equation-cell>input,.editorial-compact .margin-equation-cell>output{font-size:13px;min-height:40px;padding:5px;white-space:nowrap}
+ .editorial-compact .margin-equation-cell>input{font-size:16px}
+ .editorial-compact .margin-equation-cell[data-op]::after{right:-9px;top:37px;font-size:12px}
+ .editorial-compact .margin-equation-cell:nth-child(2)::after{display:block}
+ .editorial-compact .margin-equation-total>output{font-size:13px}
+ .editorial-compact .margin-extra{margin-top:5px}
+ .editorial-compact .margin-extra summary,.editorial-compact .margin-details summary{min-height:32px;padding:6px 0;font-size:11px;line-height:1.6}
+ .editorial-compact .margin-result{margin-top:7px;padding:9px}
+ .editorial-compact .margin-result .result-placeholder{font-size:12px;line-height:1.6}
+ .editorial-compact .margin-result .margin-result-main{font-size:26px;line-height:1.3}
+ .editorial-compact .margin-result .margin-result-equation,.editorial-compact .margin-result .margin-result-info{font-size:11px;line-height:1.6}
+ .editorial-compact .margin-reset{min-height:34px;font-size:12px}
+ .editorial-compact .margin-details p,.editorial-compact .margin-hint{font-size:11px;line-height:1.7}
+}
+@media(max-width:360px){
+ .editorial-compact #progress .compact-stage b{font-size:10px;letter-spacing:-.6px}
+ .editorial-compact #progress .compact-current-badge{font-size:9px}
+ .editorial-compact .floorplan-typebar button{font-size:10px;letter-spacing:-.5px}
+ .editorial-compact .community-slide-tab :is(strong,small){font-size:10px}
+ .editorial-compact .market-projects-primary .market-premium-card .market-premium-inline .market-premium-range{font-size:18px}
+ .editorial-compact .market-projects-primary .market-premium-card .market-premium-inline .market-premium-average strong{font-size:17px}
+ .editorial-compact .market-projects-secondary .market-premium-card .market-premium-inline .market-premium-range{font-size:16px}
+ .editorial-compact .market-projects-secondary .market-premium-card .market-premium-inline .market-premium-average strong{font-size:15px}
+ .editorial-compact .market-projects-secondary .market-premium-inline .market-premium-average{gap:3px}
+}
