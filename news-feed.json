@@ -1,7 +1,54 @@
 {
-  "checkedAt": "2026-10-30",
+  "checkedAt": "2026-10-31",
   "mode": "수동 확인 목록",
   "items": [
+    {
+      "id": "n039",
+      "kind": "blog",
+      "date": "2026-10-31",
+      "title": "북아현2구역 10월 31일자 매물 목록",
+      "source": "네이버 블로그 · 혜성부동산 · 중개광고",
+      "summary": "북아현2구역 입주권의 프리미엄·초기투자금 등 당일 광고 매물을 정리했습니다. 매물 유효성과 실제 계약은 확인이 필요합니다.",
+      "url": "https://blog.naver.com/hansuri2250/224459896304"
+    },
+    {
+      "id": "n038",
+      "kind": "blog",
+      "date": "2026-10-31",
+      "title": "북아현3구역 10월 31일자 매물 목록",
+      "source": "네이버 블로그 · 혜성부동산 · 중개광고",
+      "summary": "59형·84형 가능 매물을 포함한 프리미엄·초기투자금 사례를 게시했습니다. 호가이며 실제 거래가격은 아닙니다.",
+      "url": "https://blog.naver.com/hansuri2250/224459895573"
+    },
+    {
+      "id": "n037",
+      "kind": "blog",
+      "date": "2026-10-31",
+      "title": "북아현2·3구역 급매물 6건과 실투자금 비교",
+      "source": "네이버 블로그 · 부동산랜드북아현 · 중개업소 의견",
+      "summary": "구역별 급매 광고 6건을 비교하며 초기투자금과 추가 비용을 살펴본 글입니다. 제시 금액과 미래가치는 중개업소의 안내입니다.",
+      "url": "https://blog.naver.com/joyland7499/224459826509"
+    },
+    {
+      "id": "n035",
+      "kind": "cafe",
+      "date": "2026-10-30",
+      "title": "북2 P14억·북3 P10.9억 급매 등장…중개업소 거래일지",
+      "source": "네이버 카페 · 혜성부동산 · 중개업소 동향",
+      "summary": "10월 30일 두 구역의 낮아진 프리미엄 광고와 매수 문의 분위기를 정리했습니다. 제시 호가로, 실거래 여부는 확인되지 않았습니다.",
+      "url": "https://cafe.naver.com/hansuri2250/8220",
+      "restricted": true
+    },
+    {
+      "id": "n036",
+      "kind": "cafe",
+      "date": "2026-10-30",
+      "title": "북아현3구역 조합 임원 선임총회 조속 추진 촉구 글",
+      "source": "네이버 카페 · 혜성부동산 · 개인 민원",
+      "summary": "게시자가 서대문구청에 조합 임원 선임총회 관련 행정업무를 신속히 처리해 달라고 요청했다는 글입니다. 공식 총회 일정이 확정됐다는 뜻은 아닙니다.",
+      "url": "https://cafe.naver.com/hansuri2250/8216",
+      "restricted": true
+    },
     {
       "id": "n033",
       "kind": "cafe",
@@ -20,6 +67,15 @@
       "source": "네이버 블로그 · 느린걸음 워킹맘 · 개인 분석",
       "summary": "임시조합장 사임과 조합 운영 공백, 사업시행변경인가 관련 상황을 기존 보도와 함께 정리했습니다. 향후 선임 일정은 확정된 사실이 아닙니다.",
       "url": "https://blog.naver.com/mommom_21/224457456814"
+    },
+    {
+      "id": "n034",
+      "kind": "news",
+      "date": "2026-10-28",
+      "title": "북아현2구역 추가 이주비 예상 조달금리 6% 후반~7% 보도",
+      "source": "네이버 뉴스 · 디지털타임스",
+      "summary": "북아현2구역 조합이 조합원들에게 추가 이주비 조달금리를 연 6% 후반~7% 수준으로 안내했다는 보도입니다. 확정 대출금리가 아닌 예상치입니다.",
+      "url": "https://n.news.naver.com/mnews/article/029/0003055894?sid=101"
     },
     {
       "id": "n031",
@@ -176,6 +232,26 @@
       "url": "https://www.housingtimes.co.kr/news/articleView.html?idxno=2618"
     },
     {
+      "id": "n004",
+      "kind": "cafe",
+      "date": "2026-10-22",
+      "title": "북아현3구역 10월 22일자 매물 LIST",
+      "source": "네이버 카페 · 혜성부동산",
+      "summary": "10월 22일자 매물 목록으로, 현재 호가와 거래 여부는 원문 확인이 필요합니다.",
+      "url": "https://m.cafe.naver.com/ArticleRead.nhn?clubid=29097589&articleid=8172&boardtype=L",
+      "restricted": true
+    },
+    {
+      "id": "n005",
+      "kind": "cafe",
+      "date": "2026-10-22",
+      "title": "북아현3구역 84타입 관련 매물 게시글",
+      "source": "네이버 카페 · 혜성부동산",
+      "summary": "공개 목록에 표시된 84타입 관련 게시글로, 매물 유효 여부는 미확인입니다.",
+      "url": "https://m.cafe.naver.com/ArticleRead.nhn?clubid=29097589&articleid=8177&boardtype=L",
+      "restricted": true
+    },
+    {
       "id": "n001",
       "kind": "news",
       "date": "2026-10-15",
@@ -201,26 +277,6 @@
       "source": "MTN 머니투데이방송",
       "summary": "전문조합관리인 선정 요청안 부결과 후속 집행부 구성 과제를 다룬 보도입니다.",
       "url": "https://news.mtn.co.kr/news-detail/2026082916582969931"
-    },
-    {
-      "id": "n004",
-      "kind": "cafe",
-      "date": "2026-10-22",
-      "title": "북아현3구역 10월 22일자 매물 LIST",
-      "source": "네이버 카페 · 혜성부동산",
-      "summary": "10월 22일자 매물 목록으로, 현재 호가와 거래 여부는 원문 확인이 필요합니다.",
-      "url": "https://m.cafe.naver.com/ArticleRead.nhn?clubid=29097589&articleid=8172&boardtype=L",
-      "restricted": true
-    },
-    {
-      "id": "n005",
-      "kind": "cafe",
-      "date": "2026-10-22",
-      "title": "북아현3구역 84타입 관련 매물 게시글",
-      "source": "네이버 카페 · 혜성부동산",
-      "summary": "공개 목록에 표시된 84타입 관련 게시글로, 매물 유효 여부는 미확인입니다.",
-      "url": "https://m.cafe.naver.com/ArticleRead.nhn?clubid=29097589&articleid=8177&boardtype=L",
-      "restricted": true
     },
     {
       "id": "n006",
